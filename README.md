@@ -29,4 +29,4 @@ Or you can download the demo jar [here](http://www.mediafire.com/file/3i804dgusa
 
 Once launched, Revenge studio wil open the login page in your default browser, then you can login with username "admin" and password "admin".<br/>
 
-This project was test on windows 7,8 10, it may not work on linux based operating systems. I will try to fix this issue, if I have time.
+This project was tested on windows 7,8 10, it may not work on linux based operating systems. I will try to fix this issue, if I have time.
