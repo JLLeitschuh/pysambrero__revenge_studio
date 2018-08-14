@@ -43,6 +43,7 @@ public class Main {
 
     //main program entry point
     public static void main(final String[] args) {
+
         /*PreferencesManager.getInstance().revokeTermsAndConditions();
         PreferencesManager.getInstance().deleteLicenseKey();
         PreferencesManager.getInstance().revokeMustCheckUserLicense();
