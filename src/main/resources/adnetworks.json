@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Admob",
+    "image": "static/public/images/adnetworks/admob.png",
+    "site": "https://www.google.com/admob/",
+    "pn_prefix": "com.google.android.gms.ads"
+  },
+  {
+    "name": "Admob",
+    "image": "static/public/images/adnetworks/admob.png",
+    "site": "https://www.google.com/admob/",
+    "pn_prefix": "com.google.ads"
+  },
+  {
+    "name": "Unity Ads",
+    "image": "static/public/images/adnetworks/unity_ads.png",
+    "site": "https://unityads.unity3d.com/",
+    "pn_prefix": "com.unity3d.ads"
+  },
+  {
+    "name": "Chartboost",
+    "image": "static/public/images/adnetworks/chartboost.png",
+    "site": "https://www.chartboost.com/",
+    "pn_prefix": "com.chartboost.sdk"
+  },
+  {
+    "name": "MoPub",
+    "image": "static/public/images/adnetworks/mopub.png",
+    "site": "http://www.mopub.com/",
+    "pn_prefix": "com.mopub."
+  },
+  {
+    "name": "AdColony",
+    "image": "static/public/images/adnetworks/adcolony.png",
+    "site": "http://www.adcolony.com/",
+    "pn_prefix": "com.adcolony.sdk"
+  },
+  {
+    "name": "AdColony",
+    "image": "static/public/images/adnetworks/adcolony.png",
+    "site": "http://www.adcolony.com/",
+    "pn_prefix": "com.jirbo.adcolony."
+  },
+  {
+    "name": "Facebook Ads",
+    "image": "static/public/images/adnetworks/facebookads.png",
+    "site": "https://developers.facebook.com/products/audience-network/overview/",
+    "pn_prefix": "com.facebook.ads"
+  },
+  {
+    "name": "AppLovin",
+    "image": "static/public/images/adnetworks/applovin.png",
+    "site": "https://www.applovin.com",
+    "pn_prefix": "com.applovin."
+  },
+  {
+    "name": "Startapp",
+    "image": "static/public/images/adnetworks/startapp.png",
+    "site": "http://startapp.com/",
+    "pn_prefix": "com.startapp."
+  },
+  {
+    "name": "AppsFlyer",
+    "image": "static/public/images/adnetworks/appsflyer.png",
+    "site": "http://www.appsflyer.com/",
+    "pn_prefix": "com.appsflyer."
+  },
+  {
+    "name": "InMobi",
+    "image": "static/public/images/adnetworks/inmobi.png",
+    "site": "http://www.inmobi.com/",
+    "pn_prefix": "com.inmobi."
+  },
+  {
+    "name": "Vungle",
+    "image": "static/public/images/adnetworks/vungle.png",
+    "site": "http://www.vungle.com/",
+    "pn_prefix": "com.vungle."
+  },
+  {
+    "name": "Tapjoy",
+    "image": "static/public/images/adnetworks/tapjoy.png",
+    "site": "https://www.tapjoy.com",
+    "pn_prefix": "com.tapjoy."
+  },
+  {
+    "name": "Adjust",
+    "image": "static/public/images/adnetworks/adjust.png",
+    "site": "http://www.adjust.com/",
+    "pn_prefix": "com.adjust."
+  },
+  {
+    "name": "Millennial Media",
+    "image": "static/public/images/adnetworks/millennial.png",
+    "site": "http://www.millennialmedia.com/",
+    "pn_prefix": "com.millennialmedia."
+  },
+  {
+    "name": "Amazon Mobile Ads",
+    "image": "static/public/images/adnetworks/amazon_ads.png",
+    "site": "https://developer.amazon.com/public/apis/earn/mobile-ads",
+    "pn_prefix": "com.amazon.device.ads."
+  },
+  {
+    "name": "HeyZap",
+    "image": "static/public/images/adnetworks/heyzap.png",
+    "site": "http://www.heyzap.com/",
+    "pn_prefix": "com.heyzap.sdk."
+  },
+  {
+    "name": "MobVista",
+    "image": "static/public/images/adnetworks/mobvista.png",
+    "site": "https://www.mobvista.com/",
+    "pn_prefix": "com.mobvista.sdk."
+  },
+  {
+    "name": "Fyber",
+    "image": "static/public/images/adnetworks/fyber.png",
+    "site": "http://www.fyber.com/",
+    "pn_prefix": "com.fyber."
+  },
+  {
+    "name": "DU",
+    "image": "static/public/images/adnetworks/du.png",
+    "site": "http://ad.duapps.com/",
+    "pn_prefix": "com.duapps.ad."
+  },
+  {
+    "name": "Ironsource",
+    "image": "static/public/images/adnetworks/ironsource.png",
+    "site": "https://www.ironsrc.com/",
+    "pn_prefix": "com.ironsource.sdk."
+  },
+  {
+    "name": "AppNext",
+    "image": "static/public/images/adnetworks/appnext.png",
+    "site": "http://www.appnext.com/",
+    "pn_prefix": "com.appnext."
+  },
+  {
+    "name": "LeadBolt",
+    "image": "static/public/images/adnetworks/leadbolt.png",
+    "site": "http://www.leadbolt.com/",
+    "pn_prefix": "com.apptracker.android."
+  },
+  {
+    "name": "Smaato",
+    "image": "static/public/images/adnetworks/smaato.png",
+    "site": "http://www.smaato.com/android/",
+    "pn_prefix": "com.smaato."
+  },
+  {
+    "name": "MobileAppTracking",
+    "image": "static/public/images/adnetworks/mobileapptracking.png",
+    "site": "http://developers.mobileapptracking.com/",
+    "pn_prefix": "com.tune."
+  },
+  {
+    "name": "Kochava",
+    "image": "static/public/images/adnetworks/kochava.png",
+    "site": "https://www.kochava.com/",
+    "pn_prefix": "com.kochava."
+  },
+  {
+    "name": "Appodeal",
+    "image": "static/public/images/adnetworks/appodeal.png",
+    "site": "http://www.appodeal.com/",
+    "pn_prefix": "com.appodeal.ads."
+  },
+  {
+    "name": "Avocarrot",
+    "image": "static/public/images/adnetworks/avocarrot.png",
+    "site": "http://www.avocarrot.com/",
+    "pn_prefix": "com.avocarrot.sdk."
+  },
+  {
+    "name": "Bee7",
+    "image": "static/public/images/adnetworks/bee7.png",
+    "site": "http://bee7.com/",
+    "pn_prefix": "com.bee7.sdk."
+  },
+  {
+    "name": "AppBrain SDK",
+    "image": "static/public/images/adnetworks/appbrain.png",
+    "site": "http://www.appbrain.com/info/help/sdk/index.html",
+    "pn_prefix": "com.appbrain."
+  },
+  {
+    "name": "AdMarvel",
+    "image": "static/public/images/adnetworks/admarvel.png",
+    "site": "https://www.opera.com",
+    "pn_prefix": "com.admarvel.android.ads."
+  },
+  {
+    "name": "Revmob",
+    "image": "static/public/images/adnetworks/revmob.png",
+    "site": "https://www.revmobmobileadnetwork.com/",
+    "pn_prefix": "com.revmob."
+  },
+  {
+    "name": "AerServ",
+    "image": "static/public/images/adnetworks/aerserv.png",
+    "site": "http://www.aerserv.com",
+    "pn_prefix": "com.aerserv.sdk."
+  },
+  {
+    "name": "PubNative",
+    "image": "static/public/images/adnetworks/pubnative.png",
+    "site": "https://pubnative.net/",
+    "pn_prefix": "net.pubnative.sdk."
+  },
+  {
+    "name": "mobileCore",
+    "image": "static/public/images/adnetworks/mobilecore.png",
+    "site": "https://www.mobilecore.com",
+    "pn_prefix": "com.ironsource.mobilcore."
+  },
+  {
+    "name": "AdBuddiz",
+    "image": "static/public/images/adnetworks/adbuddiz.png",
+    "site": "http://www.adbuddiz.com/",
+    "pn_prefix": "com.purplebrain.adbuddiz."
+  },
+  {
+    "name": "Pollfish",
+    "image": "static/public/images/adnetworks/pollfish.png",
+    "site": "https://www.pollfish.com/",
+    "pn_prefix": "com.pollfish."
+  },
+  {
+    "name": "MobFox",
+    "image": "static/public/images/adnetworks/mobfox.png",
+    "site": "http://www.mobfox.com/",
+    "pn_prefix": "com.mobfox.sdk."
+  }
+]

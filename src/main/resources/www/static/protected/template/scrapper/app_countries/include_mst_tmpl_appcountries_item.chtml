@@ -1,0 +1,80 @@
+<li class="list-group-item appcountries-content-li" id="{{app.appId}}" data-uuid="{{app.uuid}}">
+    <a href="#" class="delete-appcountry-btn" onclick="ScrapperModule.removeAppCountries(event, '{{app.uuid}}');">
+        <img src="/static/public/images/close.png"/>
+    </a>
+
+    <div style="display: inline-block;">
+        <div class="kw-icon-container">
+            <a href="https://play.google.com/store/apps/details?id={{app.appId}}" target="_blank">
+                <img alt="icon" src="{{appIconSrc}}" class="app-icon-img lazy"/>
+            </a>
+        </div>
+        <div class="kw-details-container">
+            <div>
+                <a href="https://play.google.com/store/apps/details?id={{app.appId}}" target="_blank"
+                   class="kw-li-app-link"><span class="appname-sp"
+                                                style="white-space: pre-wrap;">{{app.title}}</span></a>
+            </div>
+            <div><a href="{{developer_link}}" target="_blank" class="kw-li-dev-link"><span
+                    class="developer-account-sp">{{app.developer}}</span></a></div>
+
+            <div class="btn-group dropdown">
+                <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                    Actions
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-country-{{app.appId}}">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                               onclick="ScrapperModule.getAppASO(event, '{{app.appId}}', 'appBrain');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO
+                        - AppBrain</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                               onclick="ScrapperModule.getAppASO(event, '{{app.appId}}', 'searchman');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO
+                        - Searchman</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                               onclick="ScrapperModule.getAppDetails(event, '{{app.appId}}');"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;App
+                        details</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                               onclick="ScrapperModule.addAppToFavorite(event, '{{app.appId}}');"><span
+                            class="app-rating-star">&#9733;&nbsp;</span>Add to favorites</a>
+                    </li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                               onclick="ScrapperModule.downloadApk(event, '{{app.appId}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download
+                        apk</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                               onclick="ScrapperModule.openApkDownloadPage(event, '{{app.appId}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download
+                        from ApkPure</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" target="_blank"
+                                               onclick="ScrapperModule.installOnDevice(event, '{{app.appId}}', '{{app.name}}')"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;Launch
+                        on
+                        device</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            {$mst_if_start}nonAvailableCountries.0}}
+            <div>
+                <span class="countries-some-sp">This app is not available in {{countryCount}}:</span>
+            </div>
+            <div>
+                <ul class="non-available-countries-ul">
+                    {$mst_if_start}nonAvailableCountries}}
+                    <li>
+                        <img src="{{flag_src}}"/><span>{{country_name}}</span>
+                    </li>
+                    {{/nonAvailableCountries}}
+                </ul>
+            </div>
+            {{/nonAvailableCountries.0}}
+            {$mst_else_start}nonAvailableCountries.0}}
+            <span class="countries-all-sp">This app is available in all countries</span>
+            {{/nonAvailableCountries.0}}
+        </div>
+    </div>
+</li>

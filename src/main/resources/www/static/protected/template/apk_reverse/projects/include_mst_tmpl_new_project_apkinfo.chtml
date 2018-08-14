@@ -1,0 +1,120 @@
+<div class="panel panel-sexy" style="margin-top: 10px; margin-bottom: 0;">
+    <div class="panel-heading">
+        Apk information for&nbsp;&nbsp;<span style="color: #3a71b9;font-size: large;">{{apk_file_name}}</span>
+    </div>
+    <div class="panel-body" style="padding: 15px 15px 0 150px; word-wrap: break-word;">
+
+
+        <div class="col-md-6">
+            {$mst_if_start}response.app_name}}
+            <div>
+                <span class="styled-field-prop-name">app name</span><span
+                    class="styled-field-prop-value" id="new-project-info-name">{{response.app_name}}</span>
+                <br/>
+            </div>
+            <br/>
+            {{/response.app_name}}
+
+
+            {$mst_if_start}response.size_in_MB}}
+            <div>
+                <span class="styled-field-prop-name">apk size</span><span
+                    class="styled-field-prop-value">{{response.size_in_MB}}&nbsp;Mb</span>
+            </div>
+            <br/>
+            {{/response.size_in_MB}}
+
+            <div>
+                <span class="styled-field-prop-name">version</span>
+
+                {$mst_if_start}response.versionCode}}
+                <span class="styled-field-prop-name"></span><span
+                    class="styled-field-prop-value">versionCode&nbsp;"{{response.versionCode}}"</span>
+                <br/>
+                {{/response.versionCode}}
+
+                {$mst_if_start}response.versionName}}
+                <span class="styled-field-prop-name"></span><span
+                    class="styled-field-prop-value">versionName&nbsp;"{{response.versionName}}"</span>
+                <br/>
+                {{/response.versionName}}
+            </div>
+
+            <br/>
+
+            <div>
+                <span class="styled-field-prop-name">sdk</span>
+
+                {$mst_if_start}response.minSdkVersion}}
+                <span class="styled-field-prop-name"></span><span class="styled-field-prop-value">minSdkVersion&nbsp;"{{response.minSdkVersion}}"</span>
+                <br/>
+                {{/response.minSdkVersion}}
+
+                {$mst_if_start}response.targetSdkVersion}}
+                <span class="styled-field-prop-name"></span><span class="styled-field-prop-value">targetSdkVersion&nbsp;"{{response.targetSdkVersion}}"</span>
+                <br/>
+                {{/response.targetSdkVersion}}
+
+                {$mst_if_start}response.maxSdkVersion}}
+                <span class="styled-field-prop-name"></span><span class="styled-field-prop-value">maxSdkVersion&nbsp;"{{response.maxSdkVersion}}"</span>
+                {{/response.maxSdkVersion}}
+            </div>
+            <br/>
+        </div>
+
+        <div class="col-md-6">
+            {$mst_if_start}response.package}}
+            <div>
+                <span class="styled-field-prop-name">package</span><span
+                    class="styled-field-prop-value package-name-property">{{response.package}}</span>
+
+            </div>
+            <br/>
+            {{/response.package}}
+
+
+            {$mst_if_start}response.signatureInfo}}
+            <div>
+                <span class="styled-field-prop-name">Signature</span><span class="styled-field-prop-value">{{{response.signatureInfo}}}</span>
+                <br/>
+            </div>
+            <br/>
+            {{/response.signatureInfo}}
+            {$mst_else_start}response.signatureInfo}}
+            <div>
+                <span class="styled-field-prop-name">Signature</span><span
+                    class="styled-field-prop-value">No signature...</span>
+                <br/>
+            </div>
+            {{/response.signatureInfo}}
+        </div>
+    </div>
+</div>
+
+{$mst_if_start}response.adNetworks.0}}
+<div class="panel panel-sexy" style="margin-top: 10px; margin-bottom: 0;">
+    <div class="panel-heading">
+        {{response.adNetworks.length}} Ad Network(s)
+    </div>
+    <div class="panel-body">
+        <ul class="app-adnetworks-list">
+            {$mst_if_start}response.adNetworks}}
+            <li>
+                <a href="{{adn_site}}" target="_blank" title="{{adn_name}}"><img src="{{adn_image_src}}"
+                                                                                 width="180"></a>
+            </li>
+            {{/response.adNetworks}}
+        </ul>
+    </div>
+</div>
+{{/response.adNetworks.0}}
+
+
+
+
+<div class="dec-terms-reminder">
+    <span>Please make sure that decompilation of this binary code is not
+                prohibited by the applicable license agreement or that you obtained permission to
+                decompile
+                this binary code from the copyright owner.</span>
+</div>

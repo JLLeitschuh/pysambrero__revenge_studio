@@ -1,0 +1,39 @@
+<div class="modal fade" id="modalFolderExplorer" tabindex="-1" role="dialog"
+     aria-labelledby="modalFolderExplorerLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 98%;height: 97%;padding: 0;margin-top: 15px;">
+        <div class="modal-content folder-explorer-modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>Path:&nbsp;</span>
+                    <span id="folder-explorer-current-path"
+                          style="font-weight: bold;color: #ffc391;word-wrap: break-word;"></span>
+                    <span>&nbsp;Nb elements:&nbsp;</span>
+                    <span id="folder-explorer-nb-element"
+                          style="font-weight: bold;color: #ffc391;word-wrap: break-word;"></span>
+                </div>
+            </div>
+            <div class="modal-body folder-explorer-modal-body">
+                <div class="folder-explorer-filter-div">
+                    <img id="folder-explorer-up" src="/static/public/images/util/up-folder.png" style="width: 35px;height: 35px;margin-right: 10px;" data-up-folder="">
+                    <div class="input-group" style="margin-right: 10px;">
+                        <span class="input-group-addon glyphicon glyphicon-search"></span>
+                        <input type="text" class="form-control"
+                               placeholder="positive filter, SHOW elements containing text..." style="margin-top: 1px; z-index: 0;"
+                               id="filter-positive-folder-exp-input" title="you can filter by many keywords separated by commas"/>
+                        <span class="exp-filter-counter" id="filter-counter-positive-exp"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-search"></span>
+                        <input type="text" class="form-control"
+                               placeholder="negative filter, HIDE elements containing text..." style="margin-top: 1px; z-index: 0;"
+                               id="filter-negative-folder-exp-input" title="you can filter by many keywords separated by commas"/>
+                        <span class="exp-filter-counter" id="filter-counter-negative-exp"></span>
+                    </div>
+                </div>
+                <div id="folder-explorer-container" style="overflow-y: auto;height: 86%;padding: 15px;"></div>
+            </div>
+        </div>
+    </div>
+</div>

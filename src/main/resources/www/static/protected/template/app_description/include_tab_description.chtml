@@ -1,0 +1,115 @@
+<div>
+
+    <div class="col-xs-12">
+        <label class="radio-inline">
+            <input type="checkbox" id="cbox_rtlo" value="checkbox1" checked=''>
+            RTLO
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inv_sep" value="ZWJ">Zero width joiner
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inv_sep" value="UC">Unknown character
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inv_sep" value="IS" checked="checked">Invisible Sep.
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inv_sep" value="LS">Line Sep.
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inv_sep" value="PS">Paragraph Sep.
+        </label>
+
+        <br><br>
+    </div>
+
+
+    <div class="col-xs-12">
+        <form id="descriptionform" name="descriptionform" action="scrapperapi" method="get">
+            <fieldset>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-xs-4">
+                        <select class="form-control" name="description_language" id="description_language"
+                                style="width:200px;max-width:200px;">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-xs-6">
+                        <input class="form-control max-length rtlofield" placeholder="App name here..."
+                               name="app_name"
+                               id="app_name"
+                               type="text"
+                               maxlength="50"
+                               autocomplete="off" value="">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-xs-12">
+                        <input class="form-control max-length rtlofield" placeholder="Short description here..."
+                               name="short_desc"
+                               id="short_desc"
+                               type="text"
+                               maxlength="80"
+                               autocomplete="off" value="">
+
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-xs-12">
+                        <textarea rows="8" style="width: 100%; padding: 10px; resize: vertical;" id="long_desc"
+                                  name="long_desc"
+                                  class="max-length rtlofield form-control"
+                                  placeholder="Long description here..."
+                                  autocomplete="off" maxlength="4000"></textarea>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-xs-12">
+                        <input type="submit" value="Save description" class="btn btn-success btn-sm"
+                               style="margin-bottom: 15px;"
+                               onclick="StoreListingModule.submitAddNewDescription(event);">
+                        <input type="button" value="Reset" class="btn btn-danger btn-sm" style="margin-bottom: 15px;"
+                               onclick="StoreListingModule.resetDescriptionEditor(event);">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div class="col-xs-12" id="description-container" style="display: none; margin-top: 20px;">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                <div class="pull-right">
+                    <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" title="Clear all"
+                            onclick="StoreListingModule.removeAllDescriptions();"></button>
+                    <button class="btn btn-success btn-sm glyphicon glyphicon-export" title="Export all"
+                            onclick="StoreListingModule.exportDescriptions();"></button>
+                </div>
+                <h3 class="panel-title"><span id="nb-description">0</span>&nbsp;Description(s)</h3>
+            </div>
+            <div class="dual-list">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-addon glyphicon glyphicon-search"></span>
+                            <input type="text" name="SearchDualList" class="form-control"
+                                   placeholder="search"/>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="list-group" id="list-descriptions">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

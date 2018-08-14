@@ -1,0 +1,148 @@
+<div>
+    <div class="container-fluid">
+        <script>
+            RevEnge.chkcks();
+        </script>
+        <!-- App Page Content -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Store</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 top-bluesky">
+                <ul class="nav nav-tabs nav-justified" id="scrapper-navtab">
+                    <li class="active">
+                        <a href="#scrapper-kw-search-data" data-toggle="tab">Search</a>
+                    </li>
+                    <li>
+                        <a href="#scrapper-topapps-data" data-toggle="tab">Top Apps</a>
+                    </li>
+                    <li>
+                        <a href="#scrapper-favorites-data" data-toggle="tab">Favorite&nbsp;<span id="favapps-counter-badge"></span></a>
+                    </li>
+                    <li>
+                        <a href="#scrapper-single-app-data" data-toggle="tab">App details</a>
+                    </li>
+                    <li>
+                        <a href="#scrapper-country-detect-data" data-toggle="tab">App Countries</a>
+                    </li>
+                    <li>
+                        <a href="#scrapper-app-ranking-data" data-toggle="tab">Ranking</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <br>
+
+                    <!-- keyword search tab -->
+                    <div class="row tab-pane fade in active" id="scrapper-kw-search-data">
+                        {% include keyword_search/include_tab_keyword_search %}
+                    </div>
+                    <!-- ./keyword search tab -->
+
+                    <!-- top apps tab -->
+                    <div class="row tab-pane fade in" id="scrapper-topapps-data">
+                        {% include topapps/include_tab_topapps %}
+                    </div>
+                    <!-- ./top apps tab -->
+
+                    <!-- Favorite apps tab -->
+                    <div class="row tab-pane fade in" id="scrapper-favorites-data">
+                        <div class="col-lg-12">
+                            {% include favorite_apps/include_tab_favoriteapps %}
+                        </div>
+                    </div>
+                    <!-- ./Favorite apps tab -->
+
+                    <!-- single app tab -->
+                    <div class="row tab-pane fade in" id="scrapper-single-app-data">
+                        {% include single_app_details/include_tab_appdetails %}
+                    </div>
+                    <!-- ./single app tab -->
+
+                    <!-- Country detector tab -->
+                    <div class="row tab-pane fade in" id="scrapper-country-detect-data">
+                        {% include app_countries/include_tab_app_countries %}
+                    </div>
+                    <!-- ./Country detector tab -->
+
+                    <!-- app ranking tab -->
+                    <div class="row tab-pane fade in" id="scrapper-app-ranking-data">
+                        {% include app_ranking/include_tab_app_ranking %}
+                    </div>
+                    <!-- ./app ranking tab -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal confirm kw search without proxy-->
+    {% include keyword_search/include_modal_confirm_kw_search_no_proxy %}
+    <!-- ./modal confirm kw search without proxy-->
+
+
+    <!-- modal confirm single app search without proxy-->
+    {% include single_app_details/include_modal_confirm_appdetails_search_no_proxy %}
+    <!-- ./modal confirm single app search without proxy-->
+
+    <!-- modal confirm topApps search without proxy-->
+    {% include topapps/include_modal_confirm_topapps_search_no_proxy %}
+    <!-- ./modal confirm topApps search without proxy-->
+
+    <!-- modal confirm AppCountries search without proxy-->
+    {% include app_countries/include_modal_confirm_appcountries_no_proxy %}
+    <!-- ./modal confirm AppCountries search without proxy-->
+
+
+    <!-- modal App full details -->
+    <div class="modal fade" id="modal-app-full-details" tabindex="-1" role="dialog"
+         aria-labelledby="modal-app-full-details-label" aria-hidden="true" style="margin-top: 30px;">
+        <div class="modal-dialog modal-lg" id="modal-app-full-details-content">
+            <!-- Ful details here-->
+        </div>
+    </div>
+    <!-- modal App full details -->
+
+
+    <!-- mustache templates kw search item-->
+    <script id="kw-search-result-li-template" type="text/template">
+        {% include keyword_search/include_mst_tmpl_kw_search_item %}
+    </script>
+    <!-- ./mustache templates kw search item-->
+
+    <!-- mustache templates app search result item-->
+    <script id="app-search-result-li-template" type="text/template">
+        {% include single_app_details/include_mst_tmpl_appdetails_result_item %}
+    </script>
+    <!-- ./mustache templates app search result item-->
+
+    <!-- mustache templates for app full details for modal -->
+    <script id="app-full-details-template" type="text/template">
+        {% include single_app_details/include_mst_tmpl_appdetails_modal_content %}
+    </script>
+    <!-- ./mustache templates for app full details for modal -->
+
+
+    <!-- mustache templates topApps search item-->
+    <script id="topapps-search-result-li-template" type="text/template">
+        {% include topapps/include_mst_tmpl_topapps_search_item %}
+    </script>
+    <!-- ./mustache templates topApps search item-->
+
+    <!-- mustache templates favorite apps search item-->
+    <script id="favoriteapps-result-li-template" type="text/template">
+        {% include favorite_apps/include_mst_tmpl_favoriteapps_item %}
+    </script>
+    <!-- ./mustache templates favorite apps search item-->
+
+    <!-- mustache templates app countries item-->
+    <script id="appcountries-result-li-template" type="text/template">
+        {% include app_countries/include_mst_tmpl_appcountries_item %}
+    </script>
+    <!-- ./mustache templates app countries item-->
+
+</div>

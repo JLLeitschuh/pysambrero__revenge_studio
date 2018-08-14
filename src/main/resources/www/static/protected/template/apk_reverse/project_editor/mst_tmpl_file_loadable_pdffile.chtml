@@ -1,0 +1,8 @@
+<li data-node-id="{{node_id}}" style="height: 100%;">
+    <div class="loadable-pdf-container1">
+        <div class="loadable-pdf-container2">
+            <object data="data:application/pdf;base64,{{base64PDF}}" type="application/pdf" height="100%" width="100%">
+            </object>
+        </div>
+    </div>
+</li>

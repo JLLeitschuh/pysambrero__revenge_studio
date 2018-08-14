@@ -1,0 +1,20 @@
+<div>
+    <div class="modal-header modal-header-warning">
+        <button class="close" data-dismiss="modal">&#10006;</button>
+        <h3 class="modal-title">WARNING: Firefox needed</h3>
+    </div>
+
+    <div class="modal-body">
+        <p>You are not using mozilla Firefox as your default browser!</p>
+
+        <p>RevEnge-Studio is fully compatible with FireFox browser, it is STRONGLY recommended that you use FireFox.</p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">close
+        </button>
+        <button type="button" class="btn btn-success btn-sm" onclick="SignIn.downloadFirefox(event);">
+            Download Firefox
+        </button>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="w2ui-centered form-group">
+
+    <!-- versionCode-->
+    {$mst_if_start}data.versionCode}}
+    <label for="input-fe-new-version-code" style="margin-bottom: 10px;width: 100%;text-align: left;">Current version code:&nbsp;{{data.versionCode}}</label>
+    <input type="text" class="form-control" maxlength="30" id="input-fe-new-version-code" style="background: #d1d7e6;"
+           placeholder="new version code here..." value="{{data.versionCode}}"/>
+    <br>
+    {{/data.versionCode}}
+    <!-- ./versionCode-->
+
+    <!-- versionName-->
+    {$mst_if_start}data.versionName}}
+    <label for="input-fe-new-version-name" style="margin-bottom: 10px;width: 100%;text-align: left;">Current version name:&nbsp;{{data.versionName}}</label>
+    <input type="text" class="form-control" maxlength="100" id="input-fe-new-version-name" style="background: #d1d7e6;"
+           placeholder="new version name here..." value="{{data.versionName}}"/>
+    <br>
+    {{/data.versionName}}
+    <!--./versionName -->
+
+    <!-- minSdkVersion-->
+    {$mst_if_start}data.minSdkVersion}}
+    <label for="input-fe-new-sdk-min" style="margin-bottom: 10px;width: 100%;text-align: left;">Current sdk min version:&nbsp;{{data.minSdkVersion}}</label>
+    <input type="text" class="form-control" maxlength="10" id="input-fe-new-sdk-min" style="background: #d1d7e6;"
+           placeholder="new sdk min version here..." value="{{data.minSdkVersion}}"/>
+    <br>
+    {{/data.minSdkVersion}}
+    <!-- ./minSdkVersion-->
+
+    <!-- targetSdkVersion-->
+    {$mst_if_start}data.targetSdkVersion}}
+    <label for="input-fe-new-sdk-target" style="margin-bottom: 10px;width: 100%;text-align: left;">Current sdk target version:&nbsp;{{data.targetSdkVersion}}</label>
+    <input type="text" class="form-control" maxlength="10" id="input-fe-new-sdk-target" style="background: #d1d7e6;"
+           placeholder="new sdk min target here..." value="{{data.targetSdkVersion}}"/>
+    <br>
+    {{/data.targetSdkVersion}}
+    <!-- ./targetSdkVersion-->
+
+</div>

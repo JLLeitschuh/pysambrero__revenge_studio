@@ -1,0 +1,58 @@
+{$mst_if_start}project.apkFiles.0}}
+{$mst_if_start}project.apkFiles}}
+<div>
+    <div class="btn-group dropdown">
+        <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dropdownMenuApkFiles"
+                data-toggle="dropdown" aria-expanded="true">
+            Actions
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuApkFiles">
+            {$mst_if_start}is_original}}
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabInfo(event, '{{apkName}}', 'orig');">Original Apk info</a>
+            </li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabInstall(event, '{{apkName}}', 'orig');">Install on
+                device</a>
+            </li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabDownload(event, '{{apkName}}', 'orig');">Download original apk</a>
+            </li>
+            {{/is_original}}
+            {$mst_else_start}is_original}}
+
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabInfo(event, '{{apkName}}', 'gen');">Apk info</a>
+            </li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabInstall(event, '{{apkName}}', 'gen');">Install on
+                device</a>
+            </li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabDownload(event, '{{apkName}}', 'gen');">Download apk</a>
+            </li>
+            <!--
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                       onclick="ApkToolModule.feApkTabNewProject(event, '{{apkName}}');">Create project</a>
+            </li>
+            -->
+            <li class="divider" role="presentation"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" target="_blank"
+                                       onclick="ApkToolModule.feApkTabRemove(event, '{{apkName}}');">Remove</a>
+            </li>
+            {{/is_original}}
+        </ul>
+    </div>
+    <span>{{apkName}} | {{dateCreated}} | {{description}}</span>
+</div>
+{{/project.apkFiles}}
+{{/project.apkFiles.0}}
+{$mst_else_start}project.apkFiles.0}}
+<div>
+    <p>
+        There is no apk file in this project for the moment.<br>
+        you can build apk files by clicking on: Build apk > Build DEBUG apk / Build RELEASE apk
+    </p>
+</div>
+{{/project.apkFiles.0}}

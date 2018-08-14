@@ -1,0 +1,1732 @@
+/*################################## INDEX PAGE ###############################################*/
+
+/**************************/
+/** Reconnecting overlay **/
+/**************************/
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay span#title {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #9e9e9e;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay span#details {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #9e9e9e;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay img#loader {
+    transition: 0.3s;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+
+    .overlay span#title {
+        font-size: 20px
+    }
+
+    .overlay span#details {
+        font-size: 15px;
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/**************************/
+/********** Proxy *********/
+/**************************/
+#proxy-data-navbar {
+    background: #383838;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 4px;
+    margin-top: 2px;
+    border: 1px solid #5c5c5c;
+    cursor: pointer;
+}
+
+#proxy-data-navbar span {
+    font-size: 10px;
+    display: block;
+}
+
+#proxy-data-navbar.proxy-active span {
+    color: #19e719;
+}
+
+#proxy-data-navbar.proxy-inactive span {
+    color: #e31212;
+}
+
+.proxy-list {
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.proxy-list li {
+    height: 40px;
+    padding: 0;
+    background-color: #535353;
+    border: 1px solid #818181;
+}
+
+.proxy-list-list > li > div {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: auto;
+    padding: 8px 15px;
+}
+
+.proxy-list-list > li:not(.active) > div:hover {
+    text-decoration: underline;
+}
+
+.proxy-list li.active, .proxy-list li.active:hover, .proxy-list li.active:focus {
+    color: #5f5f5f;
+    background-color: #FFDDA7;
+    border-color: #F8CB85;
+    font-weight: bold;
+}
+
+.proxy-data-item {
+    height: 100%;
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+.proxy-data-status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.proxy-data-status.ip-up {
+    background: #2dd22d;
+}
+
+.proxy-data-status.ip-down {
+    background: #ff1800;
+}
+
+.proxy-data-status.loading {
+    background-size: 15px 15px !important;
+    background: url("../images/util/loading.gif") no-repeat;
+}
+
+.proxy-data-item img.proxy-data-flag {
+    height: 28px;
+}
+
+.proxy-data-item div.proxy-data-details {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.proxy-data-item span.proxy-data-geo {
+    display: block;
+}
+
+.proxy-data-item div.proxy-content {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.proxy-data-item span {
+    font-size: 12px;
+}
+
+.remove-proxy-btn {
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.refresh-proxy-btn {
+    margin-top: 8px;
+    margin-right: 10px;
+    color: white;
+}
+
+/******* music player ***********/
+#music-player-label {
+    z-index: 10;
+    position: absolute;
+    background: #f07f00;
+    border-radius: 0 0 10px 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    text-align: center;
+    height: 20px;
+    cursor: pointer;
+    color: #000;
+    box-shadow: 1px 1px 1px #3c3c3c;
+    border: 1px solid #484848;
+    border-top: 0;
+    -moz-transition: all 100ms ease-in;
+    -ms-transform: all 100ms ease-in;
+    -webkit-transform: all 100ms ease-in;
+    -o-transform: all 100ms ease-in;
+    transform: all 100ms ease-in;
+}
+
+#music-player-label:hover {
+    -moz-transition: scale(1.3);
+    -ms-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+    background: #d46c00;
+    color: #fff;
+}
+
+#music-player-label:before{
+    position:absolute;
+    content:'';
+    top:-10px !important;
+    right:-10px !important;;
+    left:-10px !important;;
+    bottom:-10px !important;;
+}
+
+#music-player-pname {
+    width: 190px;
+}
+
+#music-player-purl {
+    width: 318px;
+}
+
+#soundcloud-href-btn {
+    float: right;
+    margin-top: 10px;
+    color: #ed7538;
+}
+
+.playlist-li {
+    background: #2f2f2f;
+    border-color: #505050;
+    color: #fafafa;
+    cursor: pointer;
+    line-height: 10px;
+}
+
+.playlist-li.activePl {
+    background: #34a55d;
+}
+
+.playlist-data-item {
+    height: 100%;
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+.btn-rem-playlist {
+    border-radius: 20px;
+    height: 18px;
+    width: 18px;
+    padding: 0;
+    margin-top: -4px;
+}
+
+.btn-edit-playlist {
+    border-radius: 20px;
+    margin-right: 15px;
+    height: 18px;
+    width: 18px;
+    padding: 0;
+    margin-top: -4px;
+}
+
+/*################################## APK TOOL PAGE ###############################################*/
+
+ul#instructions li {
+    margin: 10px 0;
+}
+
+ul#apkreverse-main-menu {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/**************************/
+/****** Apk preview *******/
+/**************************/
+.styled-field-prop-name {
+    width: 105px;
+    display: inline-block;
+    margin-left: -110px;
+    font-weight: bold;
+    color: #bdbdbd;
+}
+
+.styled-field-prop-name:after {
+    content: "";
+}
+
+.styled-field-prop-value {
+    color: #58b152;
+}
+
+ul.apk-content-list {
+    line-height: 1.8em;
+    /*list-style-type: none;*/
+    font-size: 15px;
+    word-wrap: break-word;
+}
+
+#filter-counter-js-tree-apk-prev {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #1862aa;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/**************************/
+/**** Virtual terminal*****/
+/**************************/
+#nwgrip {
+    top: 5px;
+    left: 5px;
+    background: url("../images/resize-nw.png") no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 2px white;
+}
+
+#ngrip {
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
+    background: url("../images/resize-n.png") no-repeat;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 2px white;
+}
+
+#wgrip {
+    left: -8px;
+    top: 50%;
+    margin-top: 20px;
+    background: url("../images/resize-w.png") no-repeat;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 2px white;
+}
+
+#sidemenu-terminal-counter {
+    display: none;
+    -moz-border-radius: 25%;
+    border-radius: 25%;
+    background: #e71a1a;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    font: 14px Arial, sans-serif;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+#jquery-terminal {
+    height: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
+#jquery-terminal-resizable {
+    background: #000;
+    display: none;
+    position: fixed;
+    bottom: 35px;
+    right: 10px;
+    width: 640px;
+    height: 320px;
+    max-width: 1100px;
+    max-height: 500px;
+    /*min-width: 400px;
+    min-height: 220px;*/
+    min-width: 200px;
+    min-height: 120px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    z-index: 1011;
+}
+
+#jquery-terminal-header {
+    background: #8c8c8c;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 5px 0 20px;
+    color: #e9e9e9;
+    height: 30px;
+    border: 1px solid #888;
+}
+
+#jquery-terminal-header-title {
+    text-shadow: 1px 2px 4px #000;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#jquery-terminal-header-resize-img {
+    float: right;
+}
+
+#jquery-terminal-header-resize-img > img {
+    height: 20px;
+}
+
+@keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+        box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+    }
+}
+
+@-webkit-keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+        box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+    }
+}
+
+@-ms-keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+        box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+    }
+}
+
+@-moz-keyframes blink {
+    50% {
+        color: #000;
+        background: #0c0;
+        -webkit-box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+        box-shadow: 0 0 5px rgba(0, 100, 0, 50);
+    }
+}
+
+.terminal {
+    --background: #000;
+    --color: #0c0;
+    /*text-shadow: 0 0 3px rgba(0, 100, 0, 50);*/
+}
+
+.cmd .cursor.blink {
+    -webkit-animation: 1s blink infinite;
+    animation: 1s blink infinite;
+    -webkit-box-shadow: 0 0 0 rgba(0, 100, 0, 50);
+    box-shadow: 0 0 0 rgba(0, 100, 0, 50);
+    border: none;
+    margin: 0;
+}
+
+#minified-terminal {
+    display: none;
+    background: #8c8c8c;
+    border-radius: 5px;
+    padding: 8px 5px;
+    color: #e9e9e9;
+    height: 35px;
+    border: 1px solid #888;
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    width: 205px;
+    z-index: 1011;
+    opacity: 0.5;
+}
+
+#minified-terminal:hover {
+    opacity: 1;
+}
+
+#minified-terminal-title {
+    text-shadow: 1px 2px 4px #000;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+#minified-terminal-counter {
+    display: none;
+    -moz-border-radius: 25%;
+    border-radius: 25%;
+    background: #e71a1a;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    font: 14px Arial, sans-serif;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+#minified-terminal-resize-img {
+    float: right;
+}
+
+#minified-terminal-resize-img > img {
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    #jquery-terminal-resizable {
+        max-width: 400px;
+        max-height: 220px;
+    }
+}
+
+#clear-vir-term {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAQOFAAEDhQGlVDz+AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAANFSURBVHjaTNPNTxwFHMbx78wO7Cz7BgNddqHEBpGi2BhuxBesmnjwQkO2EW1jvXnX2hi8GhMTo0ITmnokFRsPEi4iJiZQYsrJEAjbLk2bXWrYWdhXdmd3Zhb25wFD/f0BnzzPk/wUEeHKlau4DZta3SKfL/SeO/fcm319Z4cLhWIEoNXbmpem7Gxtbv3l1fWk0dGB5tW4e+cXNACPx0NmNxPp6Y1OT77/waTua+XO3Dy27SAiOI7Na2+8ytSXUywuLq4kthNTsbPR+wCICG+/81bP9Ruflv7JpEREJH55QgCJX47LtWsfSX9/vwCyt78rIkfyw8x3Mnbx9XdF5AT48OrkXObgqeTKppj5XQmFQjI4+IKs3V+RP1f+kK+/+UoAmb19Uyy3LHW3Ije++DwlIicVDKOzT1U8uI6DaWaZvT2DrvvIHRzgui4vXxjmp7tznIl08XR3l+f7B4hGu4PACWBZFqsr9+jujjAwOMDIhRHqR3XKpRIoCpqmYYQNanadg+w+ie0HmKapngKlUunXdDp9sVQq8fDhQ6LRKJ1dXbT52lBVhUajwbb1gHK5xNHRMblcjmRyZ/kUaDQaN9fX1+Ojo6NjsWgMx3Yx90wUVUUBFEWheXxMtWaRz+fZ2Nh4dHhY/vgU8HpbCPgDW2YmO7a3lyEWi9LR3oGu+wBwHJtqtYqZNanXbJrN5t+GYdingO04xGI9oYmJCRYWFri3uorW0oICeDQNv99Pw23Q2dnJpUsT/L78W3BzcxMAFUCaANAebieXy/HS8DBtPh9nIhG6IxF0r87IyAjFYgnD6EBRFETkGaAooKqqYlkW9VqdcDhMpVJF1714dZ1isUgwGKBcLmNZFsrJ/S+BCJqmhQLBAKlUimqlQr1ex3UbNBpHVKsWtu1QrVTx+/1omhY+bjafAS1aK8nkzlo6nWJ6ZprzL57n8eMn1CyLSrnMTvIRQ0ND3Lo1Sy6XI5FIrOleHQBFRIjH41iWhadF+XZ8fPwzXdcpFAq0tflQVQ+qomIYBtn9LEtLSz+6tvNJKBzi5/n/vhEUAoEAtlu/Pj8//30wEHyvp7fnFVVVo6qqKiKyn06nNw8PK8vt7eEnwWAQaZ6M+O8AZjWZOJWaoyYAAAAASUVORK5CYII=) no-repeat center !important;
+    top: 35px;
+    right: 25px;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 2px white;
+    cursor: pointer;
+    position: absolute;
+}
+
+/**************************/
+/* Apk ready notification */
+/**************************/
+#apk-ready-container {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 300px;
+}
+
+.apk-ready-property-container {
+    margin-left: 5px;
+    width: 185px;
+}
+
+.apk-ready-property-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.apk-ready-property-value {
+    font-size: 14px;
+    color: #28f300;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.apk-ready-close-btn {
+    float: right;
+}
+
+.apk-ready-close-btn > img {
+    width: 15px;
+    height: 15px;
+}
+
+.apk-ready-app-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.apk-ready-info-container {
+    background: #393939;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(72, 72, 72, 0.5);
+    border: 1px solid #474747;
+    margin-bottom: 10px;
+}
+
+.anchor-disabled {
+    opacity: 0.5;
+    text-decoration: none;
+    cursor: wait;
+}
+
+.create-project-from-benchmark {
+    float: right;
+    margin-top: 5px;
+    margin-right: -15px;
+}
+
+.downloadFrameScreen {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media (max-width: 768px) {
+    #apk-ready-container {
+        width: 240px;
+    }
+
+    .apk-ready-property-container {
+        width: 125px;
+    }
+
+    .apk-ready-app-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .apk-ready-property-name {
+        font-size: 10px;
+    }
+
+    .apk-ready-property-value {
+        font-size: 9px;
+    }
+}
+
+/****************************/
+/* apktools: projects table */
+/****************************/
+table#projects-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0; /* Removes the cell spacing via CSS */
+    background-color: #333;
+}
+
+table#projects-list-table tr {
+    border-bottom: 1px solid #414141;
+}
+
+table#projects-list-table td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 125px;
+}
+
+table#projects-list-table tbody tr {
+    line-height: 4;
+}
+
+table#projects-list-table tbody tr:hover {
+    background: #503922;
+}
+
+/* Zebra striping */
+table#projects-list-table tr:nth-of-type(odd) {
+    background: #262626;
+}
+
+table#projects-list-table th {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #999;
+    background-color: #333;
+    border-bottom: 1px solid #414141;
+}
+
+table#projects-list-table td, table#projects-list-table th {
+    padding: 6px;
+}
+
+@media only screen and (max-width: 992px),(min-device-width: 992px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table#projects-list-table, table#projects-list-table thead, table#projects-list-table tbody, table#projects-list-table th, table#projects-list-table td, table#projects-list-table tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table#projects-list-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table#projects-list-table tr {
+        border-bottom: 1px solid #414141;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    table#projects-list-table tbody tr {
+        line-height: 1.6;
+    }
+
+    table#projects-list-table td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        max-width: 100%;
+    }
+
+    table#projects-list-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        color: #999;
+    }
+
+    /*
+    Label the data
+    */
+    table#projects-list-table td:nth-of-type(1):before {
+        content: "";
+    }
+
+    table#projects-list-table td:nth-of-type(2):before {
+        content: "App Icon";
+    }
+
+    table#projects-list-table td:nth-of-type(3):before {
+        content: "Project name";
+    }
+
+    table#projects-list-table td:nth-of-type(4):before {
+        content: "Package name";
+    }
+
+    table#projects-list-table td:nth-of-type(5):before {
+        content: "Date created";
+    }
+}
+
+#my-projects-panel {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h4.text-overflow-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: white;
+
+}
+
+/**********************/
+/**** Project editor **/
+/**********************/
+
+.clear-bottom-log-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    border: 2px solid #627ed1;
+    padding: 4px;
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.stop-process-btn {
+    position: absolute;
+    top: 8px;
+    right: 60px;
+    padding: 0;
+    width: 22px !important;
+    height: 22px !important;
+    display: none;
+    z-index: 1;
+}
+
+#project-editor-devenvironment-data {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#toolbar_file_editor {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #5f6a7b;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+#layout_layout_file_editor_panel_left .w2ui-panel-content,
+#layout_layout_file_editor_panel_main .w2ui-panel-content,
+#layout_layout_file_editor_panel_bottom .w2ui-panel-content,
+#toolbar_debugger,
+#layout_layout_debugger_panel_main .w2ui-panel-content {
+    border: 1px solid #5f6a7b !important;
+}
+
+#layout_file_editor {
+    width: 100%;
+    height: 410px;
+    margin-bottom: 50px;
+    resize: vertical;
+    background: #313947;
+}
+
+#filter-counter-js-tree-fileeditor {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #1862aa;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.vakata-context {
+    z-index: 1001 !important;
+}
+
+/* prevent code completion popup from hiding behind w2ui components*/
+.CodeMirror-hints {
+    z-index: 1001 !important;
+}
+
+.CodeMirror {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
+    position: relative;
+    display: block;
+    height: 100% !important;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* when project editor is maximized*/
+.maximized-div {
+    position: fixed;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    z-index: 1000;
+    background: #211f1e url("../images/repeat/bg-dark.png");
+    padding-top: 10px;
+}
+
+.cm-editor {
+    height: 100% !important;
+}
+
+.file-info-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    color: #f9f9f9;
+    z-index: 1;
+}
+
+.loadable-img-container1 {
+    height: 100% !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.loadable-img-container2 {
+    position: relative;
+    overflow: auto;
+    height: inherit;
+    background: #5F5F5F;
+}
+
+.loadable-video-container1 {
+    height: 100% !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.loadable-video-container2 {
+    position: relative;
+    overflow: auto;
+    text-align: center;
+    height: inherit;
+    padding-top: 30px;
+}
+
+.loadable-audio-container1 {
+    height: 100% !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.loadable-audio-container2 {
+    position: relative;
+    overflow: auto;
+    text-align: center;
+    height: inherit;
+    padding-top: 30px;
+}
+
+.loadable-pdf-container1 {
+    height: 100% !important;
+}
+
+.loadable-pdf-container2 {
+    height: 100% !important;
+}
+
+#editor-notif-msg {
+    float: right;
+    padding: 2px 15px;
+    font-size: 15px;
+    color: #2eff55;
+    background: #15741d;
+    border-radius: 5px;
+    border: 1px solid #999;
+    display: none;
+}
+
+.project-info-app-icon-img {
+    margin: 15px;
+    /*max-width: 200px;
+    max-height: 200px;*/
+}
+
+/* codemirror marker span*/
+.cm-marker-search {
+    color: #808080 !important;
+    background: #FFD700 !important;
+}
+
+/*problem: autocomplete is hidden behind w2ui popup => solution z-index*/
+.ui-autocomplete {
+    position: relative;
+    cursor: default;
+    z-index: 1601 !important;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.input-manifest-entry-ren, .input-app-name-modif {
+    height: 34px;
+    padding: 6px 2px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #c3c3c3;
+    background: #232323 none;
+    border: 1px solid #353535;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.manif-ent-sp-title {
+    color: #d26000;
+    font-weight: bold;
+}
+
+.li-manifest-entry-ren, .li-app-name-modif {
+    line-height: 40px;
+}
+
+/****************************/
+/* keytools: keystores table */
+/****************************/
+table#keystores-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0; /* Removes the cell spacing via CSS */
+    background-color: #333;
+}
+
+table#keystores-list-table tr {
+    border-bottom: 1px solid #414141;
+}
+
+table#keystores-list-table td {
+    overflow: hidden;
+    max-width: 170px;
+}
+
+table#keystores-list-table tbody tr {
+    line-height: 1;
+    min-height: 65px;
+}
+
+table#keystores-list-table tbody tr:hover {
+    background: #503922;
+}
+
+/* Zebra striping */
+table#keystores-list-table tr:nth-of-type(odd) {
+    background: #262626;
+}
+
+table#keystores-list-table th {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #999;
+    background-color: #333;
+    border-bottom: 1px solid #414141;
+}
+
+table#keystores-list-table td, table#keystores-list-table th {
+    padding: 6px;
+}
+
+@media only screen and (max-width: 992px),(min-device-width: 992px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table#keystores-list-table, table#keystores-list-table thead, table#keystores-list-table tbody, table#keystores-list-table th, table#keystores-list-table td, table#keystores-list-table tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table#keystores-list-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table#keystores-list-table tr {
+        border-bottom: 1px solid #414141;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    table#keystores-list-table tbody tr {
+        line-height: 1.6;
+    }
+
+    table#keystores-list-table td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        max-width: 100%;
+    }
+
+    table#keystores-list-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        color: #999;
+    }
+
+    /*
+    Label the data
+    */
+    table#keystores-list-table td:nth-of-type(1):before {
+        content: "";
+    }
+
+    table#keystores-list-table td:nth-of-type(2):before {
+        content: "Alias";
+    }
+
+    table#keystores-list-table td:nth-of-type(3):before {
+        content: "Description";
+    }
+
+    table#keystores-list-table td:nth-of-type(4):before {
+        content: "Date created";
+    }
+}
+
+#my-keystores-panel {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+div.modal-header-dark > button.close {
+    background: #fff;
+}
+
+#filter-counter-js-tree-apk-info, #filter-counter-js-tree-apk-adbinstall {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #1862aa;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.exp-img-cont {
+    width: 130px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+}
+
+.exp-img-cont:hover {
+    background: rgba(150, 150, 150, 0.2) !important;
+}
+
+.exp-img-icon {
+    max-width: 130px;
+    max-height: 130px;
+}
+
+.text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#filter-counter-positive-exp, #filter-counter-negative-exp {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #1862aa;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/**********************/
+/**** Debugger ********/
+/**********************/
+
+#apkreverse-debugger-container {
+    width: 100%;
+}
+
+#toolbar_debugger {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #dfdfdf;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+#layout_debugger {
+    width: 100%;
+    height: 410px;
+    margin-bottom: 50px;
+    resize: vertical;
+    background: #1b1c1d;
+}
+
+/* log levels*/
+.llv {
+    color: #e3dfe2;
+}
+
+.lld {
+    color: #5095e1;
+}
+
+.lli {
+    color: #2ec12e;
+}
+
+.llw {
+    color: #d59d29;
+}
+
+.lle {
+    color: #d71600;
+}
+
+.llf {
+    color: #dadcde;
+    font-weight: bold;
+    background: #d71600;
+}
+
+.lls {
+}
+
+.scrapper-progress-div {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.cancel-scrapper-btn {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.scrapper-progress-div > span {
+    display: block;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    border-radius: 50px;
+    /*background-color: #ca500e;*/
+    background: linear-gradient(to bottom right, #ff5100, #e3aa08);
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #2a2a2a;
+    border: 1px solid #ba5a28;
+}
+
+.reset-form-button {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.quota-info-button {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.clear-results-button {
+    position: absolute;
+    top: 3px;
+    right: 80px;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.kw-icon-container {
+    display: inline-block;
+}
+
+.kw-details-container {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+.kw-actions {
+
+}
+
+.app-icon-img {
+    float: left;
+    width: 75px;
+    margin: 5px 5px 0px;
+}
+
+.kw-counter {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #0b0b0b;
+    color: #ffb400;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 1px 1px 5px 2px #2d2d2d;
+}
+
+.app-rating-star {
+    color: #e79d1b;
+    text-shadow: 0px 1px 0 #a2a2a2;
+    font-size: 18px;
+}
+
+.app-rating-sp {
+    font-size: 17px;
+    font-weight: bold;
+    color: #efb510;
+}
+
+.kw-li-app-link {
+    font-weight: bold;
+}
+
+.kw-li-app-link, .kw-li-dev-link, .kw-li-action-link {
+    color: #aeaeae;
+}
+
+.reviewers-small {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAW0lEQVR4AWP4TwBSTQEIlAuUbyj/D4QbygWwK1gAlITABdgVHIArOECmggC4ggBMBRAlBuUNQGgAE8VU4ACBmApAejfALIB61QBVwQeoBAJ+QFXwHxNSLy4IQAD87f8pWI1e0gAAAABJRU5ErkJggg==);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 16px;
+    position: relative;
+    top: 3px;
+    width: 16px;
+}
+
+/**************** App search ********************/
+.app-search-li {
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.app-search-panel {
+    margin-bottom: 0;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0,0,0,0.19) !important;
+}
+
+.app-search-title {
+    font-weight: bold;
+    color: #626262;
+    font-size: medium;
+}
+
+.app-search-dev {
+    color: #999;
+    font-size: medium;
+}
+
+.app-search-rating {
+    color: #dd961a;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.app-search-nb-review {
+    color: #777;
+}
+
+.app-search-icon {
+    float: left;
+    width: 130px;
+    margin: 5px 5px 0px;
+}
+
+.app-search-details {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    line-height: 2em;
+}
+
+.app-search-property-name {
+    font-weight: bold;
+    color: #848484;
+}
+
+.app-search-property-value {
+    color: #c3c3c3;
+}
+
+.app-search-short-container {
+    line-height: 1.7em;
+    margin-bottom: 15px;
+}
+
+.app-search-details-btn {
+    position: absolute;
+    right: 0;
+    margin-top: -14px;
+    margin-right: 5px;
+}
+
+.app-search-type {
+    color: #777;
+    font-weight: bold;
+}
+
+.carousel-caption {
+    padding-bottom: 0px !important;
+    text-shadow: 2px 1px 2px #ddd;
+    bottom: 0;
+    right: -50% !important;
+    left: 20% !important;
+}
+
+.filter-counter, .topapps-filter-counter, .favoriteapps-filter-counter {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #1862aa;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ul#list-result-topapps-search > li {
+    float: left;
+    width: 167px;
+    height: 220px;
+    margin: 10px 5px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #212121;
+}
+
+ul#list-result-topapps-search > li:hover {
+    box-shadow: 2px 2px 3px #ffab58;
+}
+
+.applist-counter {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #0b0b0b;
+    color: #ffb400;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: -10px;
+    box-shadow: 1px 1px 5px 2px #2d2d2d;
+}
+
+.applist-price {
+    font-weight: bold;
+    color: #138f13;
+}
+
+.applist-rating-div {
+    display: inline-block;
+    float: right;
+}
+
+.applist-icon-container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.applist-icon-img {
+    width: 80px;
+    margin: 5px 5px 0;
+}
+
+.applist-icon-img-sm {
+    width: 70px;
+    margin: 5px 5px 0;
+}
+
+.applist-details-container {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.applist-li-app-link, .applist-li-dev-link {
+    color: #aeaeae;
+}
+
+.applist-appname-sp {
+    font-weight: bold;
+}
+
+.applist-appname-sp, .applist-developer-sp {
+    width: 135px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    font-size: 12px;
+}
+
+ul#list-result-favoriteapps {
+    list-style-type: none;
+}
+
+ul.favoriteapps-per-day-list {
+    display: inline-block;
+}
+
+ul.favoriteapps-per-day-list > li.fav-app-content-li {
+    float: left;
+    width: 167px;
+    height: 220px;
+    margin: 10px 5px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #1a1a1a;
+}
+
+ul.favoriteapps-per-day-list > li.fav-app-content-li:hover {
+    box-shadow: 2px 2px 3px #ffab58;
+}
+
+div.fav-app-date-div {
+    font-size: 20px;
+    color: #FFA418;
+    margin: 10px auto;
+}
+
+.delete-fav-btn {
+    top: -2px;
+    right: 1px;
+    position: absolute;
+}
+
+.delete-fav-btn > img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+}
+
+#favapps-counter-badge {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #ffb400;
+    color: #171717;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 5px 0 5px;
+}
+
+ul#list-appcountries > li {
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+ul.non-available-countries-ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+ul.non-available-countries-ul > li {
+    float: left;
+    margin: 5px;
+}
+
+ul.non-available-countries-ul > li > img {
+    margin-right: 5px;
+}
+
+span.countries-all-sp {
+    font-size: 16px;
+    font-weight: bold;
+    color: #51b433;
+}
+
+span.countries-some-sp {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d1822a;
+}
+
+.delete-appcountry-btn {
+    top: -2px;
+    right: 1px;
+    position: absolute;
+}
+
+.delete-appcountry-btn > img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+}
+
+#user-projects-total-size-txt {
+    color: #28f300;
+    font-weight: bold;
+}
+
+/*
+.navbar-default.sidebar.apps {
+    background-color: rgba(0,0,0,0.19) !important;
+}
+*/
+
+.package-name-property {
+    font-weight: bold;
+    color: #ec9320;
+}
+
+.launcher-activity-property {
+    color: #9cf95a;
+}
+
+
+.folder-explorer-filter-div {
+    display: flex;
+    padding: 10px;
+    background: #4b4b4b;
+    margin-top: -1px;
+    border-bottom: 1px solid #696969;
+}
+
+.folder-explorer-modal-content {
+    height: 100%;
+    min-height: 490px;
+    background: #171616;
+}
+
+.folder-explorer-modal-body {
+    height: 92%;
+    min-height: 400px;
+    padding: 0;
+    background: #171616 url("../images/repeat/bg-dark.png");
+}
+
+div.w2ui-centered.form-group input.form-control {
+    color: #00016b;
+}
+
+.manifest-ent-renamer-modal-body {
+    padding-bottom: 0;
+}
+
+.app-name-modifier-modal-body {
+    padding-bottom: 0;
+}
+
+.border-unchanged-input {
+    background: #232323 none;
+    border: 1px solid #353535;
+}
+
+.border-error-input {
+    background: #591b11 none;
+    border: 1px solid #ec4b31;
+}
+
+li.list-group-item.app-search-li {
+    border: 0;
+}
+
+.dec-terms-reminder {
+    padding: 5px 10px 0;
+    font-size: 9px;
+    color: #bfbfbf;
+}
+
+.gold{
+    color: #ffd700;
+    font-size: medium;
+}
+
+a.forgot-pws-lnk{
+    color: #969696;
+}
+
+ul.app-adnetworks-list {
+    list-style-type: none;
+}
+
+ul.app-adnetworks-list > li {
+    float: left;
+    margin: 10px 5px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #212121;
+}
+
+ul.app-adnetworks-list > li:hover {
+    box-shadow: 2px 2px 3px #ffab58;
+}
+
+.about-us-head{
+    color: #a2a2a2;
+}
+
+.about-us-quote {
+    color: #e7ce17;
+    font-size: 30px;
+}
+
+.about-us-quote-aut {
+    color: #e7ce17;
+    font-size: 22px;
+}
+
+.about-us-team {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 1.8em;
+}

@@ -1,0 +1,108 @@
+<div class="col-xs-12 col-md-8 col-lg-6">
+    <form id="search-keyword-form">
+        <fieldset class="fieldset-custom">
+            <legend class="legend-custom">Search for apps using a keyword</legend>
+
+            <button class="btn btn-link reset-form-button" type="button"
+                    onclick="ScrapperModule.resetKeywordScrapperForm(event);">
+                reset form
+            </button>
+
+            <button class="btn btn-link clear-results-button" type="button"
+                    onclick="ScrapperModule.clearKeywordResults(event);">
+                clear results
+            </button>
+
+            <div class="col-xs-6">
+                <label class="control-label">Language</label>
+                <select class="form-group" name="scrap_language_select"
+                        id="scrap_language_select"
+                        style="width:100%;max-width:100%;">
+                </select>
+
+            </div>
+
+            <div class="col-xs-6">
+                <label class="control-label">Country</label>
+                <select class="form-group" name="scrap_country_select" id="scrap_country_select"
+                        style="width:100%;max-width:100%;">
+                </select>
+            </div>
+
+            <div class="col-xs-12" style="margin-top: 10px;">
+                <label class="radio-inline">
+                    <input type="radio" name="appprice" value="1" checked="checked">Free
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="appprice" value="2">Paid
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="appprice" value="0">Free & Paid
+                </label>
+            </div>
+
+
+            <div class="col-xs-12" style="margin-bottom: 15px; margin-top: 10px;">
+                <div class="input-group">
+                    <input id="scrap_keyword" name="scrap_keyword" type="text"
+                           class="form-control keyboardInput"
+                           placeholder="Search for keyword..." style="z-index: 0;" autocomplete="off">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit"
+                                            onclick="ScrapperModule.submitKeywordScrapperForm(event);">
+                                        Go!
+                                    </button>
+                                  </span>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+
+    <div style="margin-bottom: 15px;color: #888;">
+        <span id="kw-search-duration" style="display: none;"></span>
+    </div>
+
+    <div class="row" id="kw-search-filter" style="display: none;">
+        <div class="col-md-12">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                <input type="text" class="form-control filter-app-list"
+                       placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="kw-filter-in"/>
+                <span class="filter-counter" id="kw-search-filter-count"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="kw-search-filter-scroll"
+         style="display: none;position: fixed;bottom: 10px;right: 10px;z-index: 5;">
+        <div class="col-xs-2">
+            <a href="#" title="Back to top" onclick="smoothScroll($('#wrapper'),600);"><img id="scroll-to-top-img"
+                                                                                            style="width: 40px; height: 40px;"
+                                                                                            src="static/public/images/util/back_to_top.png"/></a>
+        </div>
+        <div class="col-xs-10">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                <input type="text" class="form-control filter-app-list"
+                       placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="kw-filter-in-scroll"/>
+                <span class="filter-counter" id="kw-search-filter-count-scroll"></span>
+            </div>
+        </div>
+    </div>
+
+    <ul id="list-result-kwsearch" class="list-group">
+
+    </ul>
+
+    <div style="margin-top: 30px;margin-bottom: 70px;">
+        <button class="play-button" id="show-more-button" data-pagination="" onclick="ScrapperModule.loadMoreResult(this);"
+                style="display: none;"> Show More
+        </button>
+        <div class="bottom-loading" id="bottom-loading-gif" style="display: none;"></div>
+    </div>
+
+</div>

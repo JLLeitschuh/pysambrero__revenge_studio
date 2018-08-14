@@ -1,0 +1,252 @@
+<div class="modal-content">
+<div class="modal-header">
+    <div class="pull-right">
+        <div class="btn-group pull-right">
+            <span class="app-search-type">{{language}}</span>&nbsp;&nbsp;
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+               aria-expanded="false">
+                Actions&nbsp;<i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="#" onclick="ScrapperModule.getAppASO(event, '{{app_id}}', 'appBrain');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO - AppBrain</a>
+                </li>
+                <li>
+                    <a href="#" onclick="ScrapperModule.getAppASO(event, '{{app_id}}', 'searchman');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO - Searchman</a>
+                </li>
+                <li><a href="#" onclick="ScrapperModule.addAppToFavorite(event, '{{app_id}}');"><span class="app-rating-star">&#9733;&nbsp;</span>Add to favorites</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#" onclick="ScrapperModule.downloadAppGraphics(event);"><i class="fa fa-cloud-download" aria-hidden="true"></i>&nbsp;Download graphics</a>
+                </li>
+                <li>
+                    <a href="#" onclick="ScrapperModule.downloadApk(event, '{{app_id}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download apk</a>
+                </li>
+                <li>
+                    <a href="#" onclick="ScrapperModule.openApkDownloadPage(event, '{{app_id}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download from ApkPure</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" onclick="ScrapperModule.installOnDevice(event, '{{app_id}}')"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;Launch on device
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="ScrapperModule.deleteAppSearch(event, '{{app_id}}', '{{id}}');">
+                    <i class="fa fa-fw fa-trash-o" style="color: #ea0707;"></i>&nbsp;Delete from list</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id={{app_id}}"
+       target="_blank" class="app-search-title">{{template_bean.title}}</a>&nbsp;<span
+        class="app-rating-star">&#9733;&nbsp;</span><span
+        class="app-search-rating">{{template_bean.score}}</span>&nbsp;<span
+        class="app-search-nb-review">{{template_bean.nbReviews}}</span>&nbsp;<span class="reviewers-small"></span>&nbsp;by
+    <a href="{{developer_link}}" target="_blank"><span
+            class="app-search-dev">{{template_bean.developer}}</span></a>
+</div>
+
+<div class="modal-body">
+
+    <!-- graphics -->
+    <div class="row">
+        <input id="app-id-hidden" type="hidden" value="{{app_id}}">
+        <input id="app-storage-key-hidden" type="hidden" value="{{id}}">
+
+        <div class="col-md-4" style="text-align: center;">
+            <a href="https://play.google.com/store/apps/details?id={{app_id}}"
+               target="_blank" style="display: inline-block;">
+                <img alt="icon"
+                     src="{{icon_src}}"
+                     style="float: left;margin: 5px 5px 0px;"/>
+            </a>
+        </div>
+        <div class="col-md-8">
+
+            <div id="carousel-bubble-overview" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" style="background: black;">
+                    {$mst_if_start}template_bean.video}}
+                    <div class="item active">
+                        <div class="col-sm-12">
+                            <div style="text-align: center;">
+                                <iframe src="{{template_bean.video}}" height="250" frameborder="0"
+                                        onload="ScrapperModule.hideVideoFrameCaption();" webkitallowfullscreen mozallowfullscreen
+                                        allowfullscreen></iframe>
+                            </div>
+                            <div class="carousel-caption" id="video-caption">
+                                <h1>video</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    {$mst_if_start}first_screenshot}}
+                    <div class="item">
+                        <div class="col-sm-12">
+                            <div style="text-align: center;">
+                                <img class="" style="display: inline-block;" src="{$mst_dot}"
+                                     alt="screenshot">
+                            </div>
+                            <div class="carousel-caption">
+                                <h1>1</h1>
+                            </div>
+                        </div>
+                    </div>
+                    {{/first_screenshot}}
+                    {{/template_bean.video}}
+                    {$mst_else_start}template_bean.video}}
+                    {$mst_if_start}first_screenshot}}
+                    <div class="item active">
+                        <div class="col-sm-12">
+                            <div style="text-align: center;">
+                                <img class="" style="display: inline-block;" src="{$mst_dot}"
+                                     alt="screenshot">
+                            </div>
+                            <div class="carousel-caption">
+                                <h1>1</h1>
+                            </div>
+                        </div>
+                    </div>
+                    {{/first_screenshot}}
+                    {{/template_bean.video}}
+
+                    {$mst_if_start}other_screenshots}}
+                    <div class="item">
+                        <div class="col-sm-12">
+                            <div style="text-align: center;">
+                                <img class="" style="display: inline-block;" src="{$mst_dot}"
+                                     alt="screenshot">
+                            </div>
+                            <div class="carousel-caption">
+                                <h1>{{screenshotsIndex}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    {{/other_screenshots}}
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-bubble-overview" role="button" data-slide="prev"
+                   style="z-index: 10;">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-bubble-overview" role="button" data-slide="next"
+                   style="z-index: 10;">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- graphics -->
+
+
+    <!-- details -->
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <span class="app-search-property-name">category</span>&nbsp;<span
+                    class="app-search-property-value">{{template_bean.genreId}}</span>
+            </div>
+            <div>
+                <span class="app-search-property-name">{$mst_if_start}isFree}}FREE{{/isFree}}{$mst_else_start}isFree}}PAID{{/isFree}}</span>&nbsp;<span
+                    class="app-search-property-value">{$mst_else_start}isFree}}Price:&nbsp;{{template_bean.price}}&nbsp;{{/isFree}}{$mst_if_start}template_bean.adSupported}}Contains ads&nbsp;{{/template_bean.adSupported}}{$mst_if_start}template_bean.offersIAP}}Offers In-app purchase{{/template_bean.offersIAP}}</span>
+            </div>
+            <div>
+                <span class="app-search-property-name">Installs</span>&nbsp;<span
+                    class="app-search-property-value">{{template_bean.minInstalls}}&nbsp;-&nbsp;{{template_bean.maxInstalls}}</span>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+            <div>
+                <span class="app-search-property-name">Version</span>&nbsp;<span
+                    class="app-search-property-value">{{template_bean.version}}</span>&nbsp;&nbsp;<span
+                    class="app-search-property-name">updated</span>&nbsp;<span
+                    class="app-search-property-value">{{template_bean.updated}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- ./details -->
+
+    <!-- descriptions -->
+    <div class="row">
+        <div class="col-md-12">
+            {$mst_if_start}is_mono_language}}
+            {$mst_if_start}template_bean.shortDesc}}
+            <div>
+                <span class="app-search-property-name">Short description</span>&nbsp;&nbsp;<span
+                    class="app-search-property-value">{{{template_bean.shortDesc}}}</span>
+            </div>
+            <div>
+                <span class="app-search-property-name">Long description</span>&nbsp;&nbsp;
+                <div style="white-space: pre-line;">
+                    {{{template_bean.longDesc}}}
+                </div>
+            </div>
+
+
+            {{/template_bean.shortDesc}}
+            {{/is_mono_language}}
+
+            {$mst_if_start}is_multi_language}}
+            {$mst_if_start}noDuplicates}}
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="accordion">
+                        <div class="accordion-section">
+
+                            <a class="accordion-section-title accordion-lang"
+                               href="#accordion-{{random_id}}"
+                               nb-lang="{{shortDescriptionsAndTitlesPerLanguage.length}}">
+                                <span>{$mst_if_start}shortDescriptionsAndTitlesPerLanguage}}{{lang_name}}{$mst_else_start}last}},&nbsp;{{/last}}{{/shortDescriptionsAndTitlesPerLanguage}}</span>
+                            </a>
+
+                            <div style="display: none;" class="accordion-section-content" id="accordion-{{random_id}}">
+                                <div class="row">
+                                    <div class="col-xs-12" style="color:#003be3;">
+                                        {$mst_if_start}shortDescriptionsAndTitlesPerLanguage}}
+                                        <a class="" href="#" onclick="ScrapperModule.openGPAppPage(event, '{{lang}}');">
+                                            <span>language : {{lang_name}}</span>
+                                        </a>
+
+                                        <div style="padding-left: 20px;border-bottom: 1px solid #e0e0e0;">
+                                            <span><b>title</b>&nbsp;{{{title}}}</span><br>
+                                            <span><b>short description</b>&nbsp;{{{shortDesc}}}</span>
+                                        </div>
+                                        {{/shortDescriptionsAndTitlesPerLanguage}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12" style="white-space: pre-line;">
+                                        {{{longDescription}}}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/noDuplicates}}
+            {{/is_multi_language}}
+        </div>
+    </div>
+    <!-- ./descriptions -->
+
+    <!-- comments -->
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <!-- ./comments -->
+</div>
+
+
+<div class="modal-footer" style="padding: 5px;">
+    <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+    </button>
+</div>
+
+</div>

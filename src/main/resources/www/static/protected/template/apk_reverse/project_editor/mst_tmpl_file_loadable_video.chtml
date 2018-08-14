@@ -1,0 +1,13 @@
+<li data-node-id="{{node_id}}" style="height: 100%;">
+    <div class="loadable-video-container1">
+        <div class="loadable-video-container2">
+            <div class="file-info-badge">
+                {{file_info}}
+            </div>
+            <video autoplay="" controls="">
+                <source src="{{url_src}}" type="{{mimeType}}"/>
+                Your browser does not support the video element.
+            </video>
+        </div>
+    </div>
+</li>

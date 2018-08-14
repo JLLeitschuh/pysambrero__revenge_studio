@@ -1,0 +1,51 @@
+<li data-apk-ready-url="{{apk_ready_url}}" data-apk-filepath="{{apk_ready_file_path}}">
+    <div class="apk-ready-info-container">
+
+        <a href="#" class="apk-ready-close-btn" onclick="ApkToolModule.apkReadyCloseNotification(event,this);">
+            <img src="/static/public/images/close.png"/>
+        </a>
+
+        <table>
+            <tr>
+                <td>
+                    <img class="apk-ready-app-icon"
+                         src="data:image/png;base64,{{apk_ready_package_img_base64}}"/>
+                </td>
+                <td>
+                    <div class="apk-ready-property-container">
+                        <span class="apk-ready-property-name" style="display: block;">Package name</span>
+                        <span class="apk-ready-property-value" style="display: block;">{{apk_ready_package_name}}</span>
+
+                        <div>
+                            <span class="apk-ready-property-name">Size</span>&nbsp;
+                            <span class="apk-ready-property-value">{{apk_ready_size}}&nbsp;Mb</span>
+                        </div>
+
+                        <div>
+                            <span class="apk-ready-property-name">Type</span>&nbsp;
+                            <span class="apk-ready-property-value">{{apk_ready_build_type}}</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="#" onclick="ApkToolModule.apkReadyDownloadFile(event,this);">download apk</a>&nbsp;&nbsp;-&nbsp;&nbsp;
+                    <a href="#" onclick="ApkToolModule.apkReadyQrCode(event,this);">QR code</a>&nbsp;&nbsp;-&nbsp;&nbsp;
+                    <a href="#" data-apk-pname="{{apk_ready_package_name}}" data-process-id=''
+                       onclick="ApkToolModule.apkReadyAdbInstall(event,this);">install</a>
+                </td>
+            </tr>
+            <!--
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-fresh btn-xs create-project-from-benchmark"
+                            onclick="ApkToolModule.apkReadyCreateNewProjectFromBenchmark(this);">
+                        New project
+                    </button>
+                </td>
+            </tr>
+            -->
+        </table>
+    </div>
+</li>

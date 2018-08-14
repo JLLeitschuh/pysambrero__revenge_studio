@@ -1,0 +1,115 @@
+<assembly>
+	<!-- example http://binkley.blogspot.com/2006/12/making-one-jar-with-maven.html -->
+	<id>one-jar</id>
+
+	<formats>
+		<format>jar</format>
+	</formats>
+
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory/>
+			<unpack>true</unpack>
+			<includes>
+				<include>com.ninjaflip:android-revenge</include>
+			</includes>
+			<unpackOptions>
+				<excludes>
+					<exclude>*.js</exclude>
+					<exclude>*.html</exclude>
+					<exclude>*.css</exclude>
+					<exclude>*.txt</exclude>
+					<exclude>*.properties</exclude>
+					<exclude>*.dtd</exclude>
+
+					<exclude>META-INF/*.SF</exclude>
+					<exclude>META-INF/*.DSA</exclude>
+					<exclude>META-INF/*.RSA</exclude>
+
+					<exclude>META-INF/maven/**</exclude>
+					<exclude>META-INF/licenses/**</exclude>
+					<exclude>META-INF/DEPENDENCIES*</exclude>
+					<exclude>META-INF/CHANGES*</exclude>
+					<exclude>META-INF/README</exclude>
+					<exclude>META-INF/LICENSE*</exclude>
+					<exclude>META-INF/INDEX.LIST</exclude>
+					<exclude>META-INF/NOTICE*</exclude>
+					<exclude>META-INF/*.properties</exclude>
+				</excludes>
+			</unpackOptions>
+		</dependencySet>
+
+		<!-- The Java Launcher$AppClassLoader does not know how to load classes
+				from a Jar inside a Jar. Our approach is to unpack all dependent Jar files
+				inside the root .jar so that the class names will be much more understandable
+				for the Launcher$AppClassLoader while reading the manifest file -->
+		<dependencySet>
+			<scope>runtime</scope>
+			<outputDirectory/>
+			<unpack>true</unpack>
+			<excludes>
+				<exclude>${groupId}:${artifactId}</exclude>
+			</excludes>
+			<unpackOptions>
+				<excludes>
+					<exclude>*.js</exclude>
+					<exclude>*.html</exclude>
+					<exclude>*.css</exclude>
+					<exclude>*.txt</exclude>
+					<exclude>*.properties</exclude>
+					<exclude>*.dtd</exclude>
+
+					<exclude>META-INF/*.SF</exclude>
+					<exclude>META-INF/*.DSA</exclude>
+					<exclude>META-INF/*.RSA</exclude>
+
+					<exclude>META-INF/maven/**</exclude>
+					<exclude>META-INF/licenses/**</exclude>
+					<exclude>META-INF/DEPENDENCIES*</exclude>
+					<exclude>META-INF/CHANGES*</exclude>
+					<exclude>META-INF/README</exclude>
+					<exclude>META-INF/LICENSE*</exclude>
+					<exclude>META-INF/INDEX.LIST</exclude>
+					<exclude>META-INF/NOTICE*</exclude>
+					<exclude>META-INF/*.properties</exclude>
+				</excludes>
+			</unpackOptions>
+		</dependencySet>
+
+		<!-- maven-assembly-plugin doesn't add dependencies with system scope.
+		This dependencySet help us to add system scoped dependencies to our one-jar
+		-->
+		<dependencySet>
+			<scope>system</scope>
+			<outputDirectory>/</outputDirectory>
+			<unpack>true</unpack>
+			<unpackOptions>
+				<excludes>
+					<exclude>*.js</exclude>
+					<exclude>*.html</exclude>
+					<exclude>*.css</exclude>
+					<exclude>*.txt</exclude>
+					<exclude>*.properties</exclude>
+					<exclude>*.dtd</exclude>
+
+					<exclude>META-INF/*.SF</exclude>
+					<exclude>META-INF/*.DSA</exclude>
+					<exclude>META-INF/*.RSA</exclude>
+
+					<exclude>META-INF/maven/**</exclude>
+					<exclude>META-INF/licenses/**</exclude>
+					<exclude>META-INF/DEPENDENCIES*</exclude>
+					<exclude>META-INF/CHANGES*</exclude>
+					<exclude>META-INF/README</exclude>
+					<exclude>META-INF/LICENSE*</exclude>
+					<exclude>META-INF/INDEX.LIST</exclude>
+					<exclude>META-INF/NOTICE*</exclude>
+					<exclude>META-INF/*.properties</exclude>
+				</excludes>
+			</unpackOptions>
+		</dependencySet>
+
+	</dependencySets>
+</assembly>

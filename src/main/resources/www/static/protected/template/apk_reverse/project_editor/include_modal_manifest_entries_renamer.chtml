@@ -1,0 +1,23 @@
+<div class="modal fade" id="modalManifestEntriesRenamer" tabindex="-1" role="dialog"
+     aria-labelledby="modalManifestEntriesRenamerLabel" data-backdrop="static" data-keyboard="false" aria-hidden="false">
+    <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>Manifest Entries Transformer</span>
+                </div>
+            </div>
+            <div class="modal-body manifest-ent-renamer-modal-body">
+                <div id="manifest-entries-container" style="max-height: 430px;overflow-y: auto;overflow-x: hidden;"></div>
+            </div>
+            <div class="modal-footer" style="padding: 5px;">
+                <button id="modalManifestEntriesRenamer-submit" type="button" class="btn btn-success push_right btn-sm" onclick="ApkToolModule.toolsManifestEntriesRenamerPerform();">
+                    Submit
+                </button>
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

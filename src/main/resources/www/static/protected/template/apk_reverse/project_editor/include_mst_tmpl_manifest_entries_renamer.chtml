@@ -1,0 +1,81 @@
+<div>
+    {$mst_if_start}response.packageActivities.0}}
+    <div class="row">
+        <div class="col-xs-12"><h4><span class="manif-ent-sp-title">{{response.packageActivities.length}}&nbsp;{$mst_if_start}response.packageActivities.1}}Activities{{/response.packageActivities.1}}{$mst_else_start}response.packageActivities.1}}Activity{{/response.packageActivities.1}}</span></h4></div>
+        <div class="col-xs-12">
+            <ul id="ul-manif-packageActivities">
+                {$mst_if_start}response.packageActivities}}
+                <li class="li-manifest-entry-ren" data-manifest-entry="{{manifest_entry}}"><span>{{packageName}}.</span><input maxlength="40" placeholder="{{class_name}}" value="{{class_name}}" class="input-manifest-entry-ren" type="text"/></li>
+                {{/response.packageActivities}}
+            </ul>
+        </div>
+    </div>
+    {{/response.packageActivities.0}}
+
+    {$mst_if_start}response.foreignActivities.0}}
+    <div class="row">
+        <div class="col-xs-12"><h4><span class="manif-ent-sp-title">{{response.foreignActivities.length}}&nbsp;{$mst_if_start}response.foreignActivities.1}}Other Activities{{/response.foreignActivities.1}}{$mst_else_start}response.foreignActivities.1}}Other Activity{{/response.foreignActivities.1}}</span></h4></div>
+        <div class="col-xs-12">
+            <ul id="ul-manif-foreignActivities">
+                {$mst_if_start}response.foreignActivities}}
+                <li class="li-manifest-entry-ren" data-manifest-entry="{{manifest_entry}}"><span>{{packageName}}.</span><input maxlength="40" placeholder="{{class_name}}" value="{{class_name}}" class="input-manifest-entry-ren" type="text"/></li>
+                {{/response.foreignActivities}}
+            </ul>
+        </div>
+    </div>
+    {{/response.foreignActivities.0}}
+
+    {$mst_if_start}response.packageServices.0}}
+    <div class="row">
+        <div class="col-xs-12"><h4><span class="manif-ent-sp-title">{{response.packageServices.length}}&nbsp;{$mst_if_start}response.packageServices.1}}Services{{/response.packageServices.1}}{$mst_else_start}response.packageServices.1}}Service{{/response.packageServices.1}}</span></h4></div>
+        <div class="col-xs-12">
+            <ul id="ul-manif-packageServices">
+                {$mst_if_start}response.packageServices}}
+                <li class="li-manifest-entry-ren" data-manifest-entry="{{manifest_entry}}"><span>{{packageName}}.</span><input maxlength="40" placeholder="{{class_name}}" value="{{class_name}}" class="input-manifest-entry-ren" type="text"/></li>
+                {{/response.packageServices}}
+            </ul>
+        </div>
+    </div>
+    {{/response.packageServices.0}}
+
+
+    {$mst_if_start}response.foreignServices.0}}
+    <div class="row">
+        <div class="col-xs-12"><h4><span class="manif-ent-sp-title">{{response.foreignServices.length}}&nbsp;{$mst_if_start}response.foreignServices.1}}Other Services{{/response.foreignServices.1}}{$mst_else_start}response.foreignServices.1}}Other Service{{/response.foreignServices.1}}</span></h4></div>
+        <div class="col-xs-12">
+            <ul id="ul-manif-foreignServices">
+                {$mst_if_start}response.foreignServices}}
+                <li class="li-manifest-entry-ren" data-manifest-entry="{{manifest_entry}}"><span>{{packageName}}.</span><input maxlength="40" placeholder="{{class_name}}" value="{{class_name}}" class="input-manifest-entry-ren" type="text"/></li>
+                {{/response.foreignServices}}
+            </ul>
+        </div>
+    </div>
+    {{/response.foreignServices.0}}
+
+    {$mst_if_start}response.packageReceivers.0}}
+    <div class="row">
+        <div class="col-xs-12"><h4><span class="manif-ent-sp-title">{{response.packageReceivers.length}}&nbsp;{$mst_if_start}response.packageReceivers.1}}Receivers{{/response.packageReceivers.1}}{$mst_else_start}response.packageReceivers.1}}Receiver{{/response.packageReceivers.1}}</span></h4></div>
+        <div class="col-xs-12">
+            <ul id="ul-manif-packageReceivers">
+                {$mst_if_start}response.packageReceivers}}
+                <li class="li-manifest-entry-ren" data-manifest-entry="{{manifest_entry}}"><span>{{packageName}}.</span><input maxlength="40" placeholder="{{class_name}}" value="{{class_name}}" class="input-manifest-entry-ren" type="text"/></li>
+                {{/response.packageReceivers}}
+            </ul>
+        </div>
+    </div>
+    {{/response.packageReceivers.0}}
+
+
+    {$mst_if_start}response.foreignReceivers.0}}
+    <div class="row">
+        <div class="col-xs-12"><h4><span class="manif-ent-sp-title">{{response.foreignReceivers.length}}&nbsp;{$mst_if_start}response.foreignReceivers.1}}Other Receivers{{/response.foreignReceivers.1}}{$mst_else_start}response.foreignReceivers.1}}Other Receiver{{/response.foreignReceivers.1}}</span></h4></div>
+        <div class="col-xs-12">
+            <ul id="ul-manif-foreignReceivers">
+                {$mst_if_start}response.foreignReceivers}}
+                <li class="li-manifest-entry-ren" data-manifest-entry="{{manifest_entry}}"><span>{{packageName}}.</span><input maxlength="40" placeholder="{{class_name}}" value="{{class_name}}" class="input-manifest-entry-ren" type="text"/></li>
+                {{/response.foreignReceivers}}
+            </ul>
+        </div>
+    </div>
+    {{/response.foreignReceivers.0}}
+</div>

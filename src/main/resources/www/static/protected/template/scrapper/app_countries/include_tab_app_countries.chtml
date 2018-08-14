@@ -1,0 +1,47 @@
+<div class="col-lg-10">
+    <form id="search-appcountries-form">
+        <fieldset class="fieldset-custom">
+            <legend class="legend-custom">Get countries availability</legend>
+
+            <button class="btn btn-link quota-info-button" type="button"
+                    onclick="ScrapperModule.getQuotaInfoAppCounty(event);">
+                Quota info
+            </button>
+
+             <div class="col-xs-12" style="margin-bottom: 15px; margin-top: 10px;">
+                <div class="input-group">
+                    <input id="appid_countries" name="appid_countries" type="text"
+                           class="form-control"
+                           placeholder="google play url or package name here..."
+                           style="z-index: 0;" autocomplete="off">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit"
+                                            onclick="ScrapperModule.submitAppCountriesForm(event);">
+                                        Go!
+                                    </button>
+                                  </span>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+<div class="col-lg-10">
+
+    <div style="margin-bottom: 15px;color: #888;">
+        <span id="appcountries-search-duration" style="display: none;"></span>
+    </div>
+
+    <div>
+        <ul id="list-appcountries" class="list-group">
+        </ul>
+    </div>
+
+    <div id="progress-country-scrapper" class="scrapper-progress-div">
+        <button class="btn btn-hot btn-sm cancel-scrapper-btn" id="cancel-appcountries-scrapper" data-process-id=""
+                onclick="ScrapperModule.cancelAppCountriesScrapping();">
+            Cancel
+        </button>
+        <span>0%</span>
+    </div>
+</div>

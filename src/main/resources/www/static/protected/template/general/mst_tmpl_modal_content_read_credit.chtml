@@ -1,0 +1,42 @@
+<div>
+    <div class="modal-header modal-header-dark">
+        <button class="close" data-dismiss="modal">&#10006;</button>
+        <h3 class="modal-title">Credit</h3>
+    </div>
+
+    <div class="modal-body" style="max-height: 390px; overflow: auto;">
+
+
+        <p>&#9673; REVENGE-STUDIO compilation/decompilation engine is based on a fork of <a
+                href="https://ibotpeaches.github.io/Apktool/" target="_blank">Apktool</a>
+            by <a href="https://github.com/iBotPeaches" target="_blank">Connor Tumbleson</a> and <a href="https://github.com/brutall" target="_blank">Ryszard Wiśniewski</a>. The
+            project was forked and modified to make it thread-safe and support multi-threading execution in multi-core
+            processors.
+        </p>
+
+        <p>&#9673; Apk downloads is powered by <a href="https://apkpure.com/" target="_blank">APKPure.com</a>. NOTE:
+            REVENGE-STUDIO is
+            neither sponsored nor affiliated with APKPure.com</p>
+
+        <p>&#9673; ASO is powered by <a href="http://www.appbrain.com/" target="_blank">AppBrain</a>. NOTE:
+            REVENGE-STUDIO is neither
+            sponsored nor affiliated with AppBrain</p>
+
+        <p>&#9673; ASO is also powered by <a href="https://searchman.com/" target="_blank">SearchMan</a>. NOTE:
+            REVENGE-STUDIO is neither
+            sponsored nor affiliated with SearchMan</p>
+
+        <p>&#9673; APK installer and Debugger are both based on <a
+                href="https://developer.android.com/studio/command-line/adb.html" target="_blank">Android Debug Bridge
+            (ADB)</a> command line tool. ADB is a toolkit included in the Android SDK package owned by <a
+                href="https://www.google.com/intl/en/about/" target="_blank">Google Inc</a>.</p>
+
+        <p>&#9673; Music provided by <a href="https://developers.soundcloud.com/docs/api" target="_blank">SoundCloud® free API</a>.
+        </p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close
+        </button>
+    </div>
+</div>

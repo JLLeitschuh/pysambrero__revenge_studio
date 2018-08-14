@@ -1,0 +1,16 @@
+<div class="modal fade" id="modalApkInfo" tabindex="-1" role="dialog"
+     aria-labelledby="modalApkInfoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>Apk info</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="apk-info-container"></div>
+            </div>
+        </div>
+    </div>
+</div>

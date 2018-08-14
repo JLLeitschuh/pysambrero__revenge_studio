@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- The Basics -->
+    <groupId>com.ninjaflip</groupId>
+    <artifactId>android-revenge</artifactId>
+    <!--<version>1.0-SNAPSHOT</version>-->
+    <version>3.0</version>
+    <packaging>jar</packaging>
+    <!-- ./The Basics -->
+
+    <!-- More Project Information -->
+    <name>RevEnge Studio</name>
+    <organization>
+        <name>Ninja Flip</name>
+        <url>http://www.ninja-flip.com/</url>
+    </organization>
+    <description>The best tool for every Appreneur</description>
+    <inceptionYear>2017</inceptionYear>
+    <licenses>
+        <license>
+            <name></name>
+            <url></url>
+            <distribution>manual</distribution>
+            <comments>A friendly license</comments>
+        </license>
+    </licenses>
+    <developers></developers>
+    <!-- -->
+
+
+    <properties>
+        <tool.proguard.version>5.2</tool.proguard.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Please ensure that the keystore exists in the correct folder -->
+        <!-- <keystore.path>${user.home}/myKeystore/myKeystore</keystore.path> -->
+        <keystore.path>src/main/resources/keystore/keyfortest.jks</keystore.path>
+        <keystore.type>JKS</keystore.type>
+        <keystore.alias>keyfortest</keystore.alias>
+
+        <!-- If you are paranoid, you can remove the password property above. In
+            this case it is passed to maven as a parameter of the 'mvn'command like this
+            : "mvn clean install -Dkeystore.password=myPassword" -->
+        <keystore.password>Dracuule183</keystore.password>
+        <keystore.store.password>${keystore.password}</keystore.store.password>
+        <keystore.key.password>${keystore.password}</keystore.key.password>
+    </properties>
+
+
+    <profiles>
+        <profile>
+            <id>windows-x86_64</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                    <arch>x86_64</arch>
+                </os>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>windows-x86</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                    <arch>x86</arch>
+                </os>
+            </activation>
+        </profile>
+        <profile>
+            <id>unix-amd64</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                    <arch>amd64</arch>
+                </os>
+            </activation>
+        </profile>
+    </profiles>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <name>oss.sonatype.org</name>
+            <id>oss.sonatype.org</id>
+            <url>http://oss.sonatype.org/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <build>
+        <finalName>Android-RevEnge</finalName>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <!-- Exclude the keystore folder from the result jar -->
+                    <exclude>keystore/**</exclude>
+                    <!-- Exclude the lib folder from resources as they are declared as dependencies -->
+                    <exclude>lib/**</exclude>
+                    <!-- Exclude javascript files aimed to be obfuscated by the YUI compressor plugin
+                    Uncomment the line below when building obfuscated jar
+                    -->
+
+                    <!-- <exclude>www/static/protected/js/*.js</exclude> -->
+
+                    <!-- Exclude pycharm .idea folder -->
+                    <exclude>www/.idea/**</exclude>
+                    <exclude>www/idea/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <!-- Obfuscate javascript protected files before building the one-jar executable file-->
+            <!--
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>yuicompressor-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <nosuffix>true</nosuffix>
+                    <sourceDirectory>src/main/resources/www/static/protected/js</sourceDirectory>
+                    <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                    <excludes>
+                        <exclude>**/static/public/**</exclude>
+                        <exclude>**/*.min.js</exclude>
+                        <exclude>**/*.min.css</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            -->
+
+            <!--
+            Sometimes when you may need to compile a certain project to a different version than what you are currently using.
+            Spark framework version 2 necessitate java 8 to work
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+
+            <!-- Configures Proguard obfuscation tool to generate an
+            obfuscated version of the JAR file that replaces the
+            default unobfuscated JAR.
+            -->
+
+
+            <plugin>
+                <groupId>com.github.wvengen</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <version>2.0.13</version>
+
+                <executions>
+                    <execution>
+                        <id>obfuscation-packaging</id>
+                        <phase>package</phase>
+                        <goals><goal>proguard</goal></goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+                    <maxMemory>1024m</maxMemory>
+                    <proguardVersion>${tool.proguard.version}</proguardVersion>
+                    <obfuscate>true</obfuscate>
+                    <attach>true</attach>
+                    <appendClassifier>false</appendClassifier>
+                    <addMavenDescriptor>false</addMavenDescriptor>
+
+                    <injar>${project.build.finalName}.jar</injar>
+                    <injarNotExistsSkip>true</injarNotExistsSkip>
+                    <libs>
+                        <lib>${java.home}/lib/rt.jar</lib>
+                        <lib>${java.home}/lib/jce.jar</lib>
+                        <lib>${java.home}/lib/jsse.jar</lib>
+                        <lib>${java.home}/lib/ext/sunjce_provider.jar</lib>
+                    </libs>
+                    <proguardInclude>${basedir}/proguard.conf</proguardInclude>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.proguard</groupId>
+                        <artifactId>proguard-base</artifactId>
+                        <version>${tool.proguard.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+
+
+            <!-- By default, Maven doesn't bundle dependencies in the JAR file it builds, this leads to NoClassDefFoundError when executing the jar
+             that's why we use the maven-shade-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <minimizeJar>true</minimizeJar>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <!-- Dependency "bouncy castle" has signed JARs, so when we combine them all in one-JAR, then signature of
+                                        the signed one-JAR doesn't match up, and hence Maven complains about it and we get the security exception
+                                        about signature mis-match.
+                                         => Exception in thread “main” java.lang.SecurityException: Invalid signature file digest for Manifest main attributes
+                                         To fix this we need to exclude their signature related files.
+                                         -->
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+
+
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!-- Maven create a one jar executable file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <!-- This line prevents from creating two jars by appending the assembly
+                        id to the current ${project.build.finalName} (the original jar and the one-jar|signed
+                        one). If set to true, you must sign and add each applet dependency to the
+                        applet folder in the war/webapp folder -->
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                        <index>false</index>
+                        <manifest>
+                            <addClasspath>false</addClasspath>
+                            <addExtensions>false</addExtensions>
+                            <addDefaultImplementationEntries>false</addDefaultImplementationEntries>
+                            <mainClass>com.ninjaflip.androidrevenge.Main</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Built-By></Built-By>
+                            <Implementation-Version>${maven.build.timestamp}</Implementation-Version>
+                            <SplashScreen-Image>images/splash.png</SplashScreen-Image>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+                <executions>
+
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!-- Maven jar signing goals, it will sign all submodules jars -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>sign</id>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Prevent the current pom file from being added to the result jar
+                        META-INF (contains keystore password) -->
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+
+                    <keystore>${keystore.path}</keystore>
+                    <!--<storetype>${keystore.type}</storetype>-->
+                    <alias>${keystore.alias}</alias>
+                    <storepass>${keystore.store.password}</storepass>
+                    <keypass>${keystore.key.password}</keypass>
+                    <!-- Sign the one-jar jar file (result of assembly), then it will be
+                        installed on the local repository, do not uncomment unless 'appendAssemblyId'
+                        of the assembly-plugin tag is set to true -->
+                    <!-- <jarPath>${project.build.directory}/${project.build.FinalName}-one-jar.${project.packaging}</jarPath> -->
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.13</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>22.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.x5dev/chunk-templates -->
+        <dependency>
+            <groupId>com.x5dev</groupId>
+            <artifactId>chunk-templates</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.sun.org.apache.xml.internal/resolver
+        needed by apktool
+        -->
+        <dependency>
+            <groupId>com.sun.org.apache.xml.internal</groupId>
+            <artifactId>resolver</artifactId>
+            <version>20050927</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli
+        This dependency is used by the Signing tool, we mut put in before before apktool dependency.
+        otherwise, there is a conflict between them on org.apache.commons.cli.* package used by CLIParser class
+        -->
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- apk signer dependency jar inside the resource folder /lib
+        https://github.com/mcxiaoke/ApkSigner
+        -->
+        <dependency>
+            <groupId>com.android</groupId>
+            <artifactId>apksigner</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/apksigner_25_0_3.jar</systemPath>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io
+        File utilities, we use version 2.2 (not the latest 2.5) because it is compatible with java 1.6
+        -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.6</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml
+        Read apktool.yaml file containing app info
+        -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.18</version>
+        </dependency>
+
+        <!--
+        Apktool dependency jar inside the resource folder /lib
+        https://github.com/mcxiaoke/ApkSigner
+        -->
+        <dependency>
+            <groupId>brut.apktool</groupId>
+            <artifactId>apktool</artifactId>
+            <version>2.3.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/apktool_2.3.0.jar</systemPath>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+        Logging utility
+        -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+
+        <!-- https://github.com/dizitart/nitrite-database
+        NoSql light weight database
+        -->
+        <dependency>
+            <groupId>org.dizitart</groupId>
+            <artifactId>nitrite</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sparkjava/spark-core
+        http and web-socket server, latest version 2.6.0 supports java 8 only
+        java 7 is supported in version 1.1.1 which is very old and obsolete
+        -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.10.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tinkerpop/tinkergraph-gremlin
+        Graph representation of directories to improve search performance
+        -->
+        <dependency>
+            <groupId>org.apache.tinkerpop</groupId>
+            <artifactId>tinkergraph-gremlin</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tinkerpop/gremlin-groovy
+        apache tinkerpoop script interpreter engine
+        -->
+        <dependency>
+            <groupId>org.apache.tinkerpop</groupId>
+            <artifactId>gremlin-groovy</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java -->
+        <dependency>
+            <groupId>com.tinkerpop.gremlin</groupId>
+            <artifactId>gremlin-java</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.thinkaurelius.titan/titan-core -->
+
+        <!--<dependency>
+            <groupId>com.thinkaurelius.titan</groupId>
+            <artifactId>titan-core</artifactId>
+            <version>1.0.0</version>
+        </dependency>-->
+
+
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on
+        Cryptographic api used by keytool
+        -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.57</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j
+        Utility for Password protected zip file in java, zip/unzip
+        -->
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <!-- https://github.com/jwtk/jjwt
+        -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.nimbusds/nimbus-jose-jwt -->
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>4.39</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.reactivex/rxjava -->
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.android.ddmlib/ddmlib -->
+        <!--<dependency>
+            <groupId>com.android.ddmlib</groupId>
+            <artifactId>ddmlib</artifactId>
+            <version>r16</version>
+        </dependency>
+        -->
+
+
+    </dependencies>
+</project>

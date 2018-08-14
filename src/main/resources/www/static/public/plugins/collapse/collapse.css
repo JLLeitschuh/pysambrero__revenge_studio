@@ -1,0 +1,63 @@
+
+div.collapsible h4 {
+    margin: 0;
+    /*background-color: rgba(174, 174, 174, 0.45);*/
+    /*background-image: linear-gradient(bottom, #AEAEAE 15%, #CCC 80%);*/
+    /*background-image: -o-linear-gradient(bottom, #AEAEAE 15%, #CCC 80%);*/
+    /*background-image: -moz-linear-gradient(bottom, #AEAEAE 15%, #CCC 80%);*/
+    /*background-image: -webkit-linear-gradient(bottom, #AEAEAE 15%, #CCC 80%);*/
+    /*background-image: -ms-linear-gradient(bottom, #AEAEAE 15%, #CCC 80%);*/
+
+    background: #626262; /* Old browsers */
+    background: -moz-linear-gradient(top, #626262 15%, #8a8a8a 80%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #626262), color-stop(80%, #8a8a8a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #626262 15%, #8a8a8a 80%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #626262 15%, #8a8a8a 80%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #626262 15%, #8a8a8a 80%); /* IE10+ */
+    background: linear-gradient(to bottom, #626262 15%, #8a8a8a 80%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#626262', endColorstr='#8a8a8a', GradientType=0); /* IE6-9 */
+
+}
+
+div.collapsible h4 a, div.collapsible h4 a:active, div.collapsible h4 a:hover {
+    background: url("sprite.png") 15px 13px no-repeat;
+    display: block;
+    padding: 10px;
+    padding-left: 32px;
+    margin: 0;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: normal;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.50);
+    text-shadow: 1px 1px 1px rgb(60, 60, 60);
+}
+
+div.collapsible h4:hover a {
+    text-shadow: 1px 1px 1px rgb(60, 60, 60);
+}
+
+div.collapsible h4.open {
+    /*background-color: rgba(174, 174, 174, 0.45);*/
+    /*background-image: linear-gradient(bottom, #c0c0c0 15%, #dddddd 80%);*/
+    /*background-image: -o-linear-gradient(bottom, #c0c0c0 15%, #dddddd 80%);*/
+    /*background-image: -moz-linear-gradient(bottom, #c0c0c0 15%, #dddddd 80%);*/
+    /*background-image: -webkit-linear-gradient(bottom, #c0c0c0 15%, #dddddd 80%);*/
+    /*background-image: -ms-linear-gradient(bottom, #c0c0c0 15%, #dddddd 80%);*/
+    background: #777777; /* Old browsers */
+    background: -moz-linear-gradient(top, #777777 15%, #898989 80%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #777777), color-stop(80%, #898989)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #777777 15%, #898989 80%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #777777 15%, #898989 80%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #777777 15%, #898989 80%); /* IE10+ */
+    background: linear-gradient(to bottom, #777777 15%, #898989 80%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#777777', endColorstr='#898989', GradientType=0); /* IE6-9 */
+
+}
+
+div.collapsible h4.open a {
+    background-position: 13px -25px;
+}
+
+div.collapsible h4 + div {
+    /*padding: 10px;*/
+}

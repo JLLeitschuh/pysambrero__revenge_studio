@@ -1,0 +1,19 @@
+<div class="col-lg-12">
+    <p>
+        <span>Validate and Format Json string</span>
+        <button class="btn btn-sky btn-sm" style="margin-left: 10px;" onclick="ToolboxModule.jsonValidateAndFormat();">
+            Process
+        </button>
+    </p>
+</div>
+
+<div class="col-lg-12">
+    <textarea rows="15" style="width: 100%; padding: 10px; resize: vertical;" id="text-json-entry"
+              placeholder="past in json here and click process..."
+              autocomplete="off" class="form-control"
+              onkeyup="ToolboxModule.getLineNumberAndColumnIndex(this);" onmouseup="this.onkeyup();"></textarea>
+</div>
+<div class="col-lg-12">
+    <span id="json-cursor-position">Cursor</span>
+</div>
+

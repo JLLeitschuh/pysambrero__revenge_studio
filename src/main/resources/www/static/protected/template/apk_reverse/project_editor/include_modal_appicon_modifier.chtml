@@ -1,0 +1,42 @@
+<div class="modal fade" id="modalModifyAppIcon" tabindex="-1" role="dialog"
+     aria-labelledby="modalModifyAppIconLabel" data-backdrop="static" data-keyboard="false"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>App Icon Modifier</span>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <div style="position: absolute;right: 25px;top: 10px;z-index: 1001;">
+                    <button class="btn btn-danger btn-xs" id="clear-appIconModifier-dropzone" style="margin-top: 15px;margin-right: 15px;display: none;">
+                        Remove
+                    </button>
+                </div>
+
+                <!-- file upload form-->
+                <div>
+                    <form id="appIconModifierDropzone" action="/fake_url" class="dropzone" method="post"
+                          enctype="multipart/form-data" style="text-align: center; min-height: 240px;max-height: 400px;overflow: auto;">
+                        <div class="dz-message">Drop one PNG image file here or click here to select<br><br>
+						<span style="font-size: 15px;">(<strong>1</strong> image file <strong>512x512 pixels</strong> and file size less than <strong>5
+							Megabytes</strong>)</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- ./file upload form-->
+            </div>
+
+            <div class="modal-footer" style="padding: 5px;">
+                <button id="modalModifyAppIcon-submit" type="button" class="btn btn-success push_right btn-sm" style="display: none;">
+                    Submit
+                </button>
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

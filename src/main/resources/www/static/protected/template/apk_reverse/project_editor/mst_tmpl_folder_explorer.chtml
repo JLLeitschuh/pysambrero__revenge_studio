@@ -1,0 +1,35 @@
+{$mst_if_start}data.elements.0}}
+<div class="row">
+    <div class="col-xs-12">
+        <div>
+            {$mst_if_start}data.elements}}
+
+            {$mst_if_start}thumb_b64}}
+            <div class="exp-img-cont" title="{{title}}" data-node-id="{{nodeId}}" data-node-label="{{label}}" data-node-type="{{mimeCategory}}">
+                <div>
+                    <img class="exp-img-icon" src="data:image/png;base64,{{thumb_b64}}"/>
+                </div>
+                <div class="text-overflow">
+                    <span class="exp-img-name">{{name}}</span>
+                </div>
+            </div>
+            {{/thumb_b64}}
+            {$mst_else_start}thumb_b64}}
+            {$mst_if_start}thumb_link}}
+            <div class="exp-img-cont" title="{{title}}" data-node-id="{{nodeId}}" data-node-label="{{label}}" data-node-type="{{mimeCategory}}">
+                <div>
+                    <img class="exp-img-icon" src="{{thumb_link}}"/>
+                </div>
+                <div class="text-overflow">
+                    <span class="exp-img-name">{{name}}</span>
+                </div>
+            </div>
+            {{/thumb_link}}
+            {{/thumb_b64}}
+
+
+            {{/data.elements}}
+        </div>
+    </div>
+</div>
+{{/data.elements.0}}

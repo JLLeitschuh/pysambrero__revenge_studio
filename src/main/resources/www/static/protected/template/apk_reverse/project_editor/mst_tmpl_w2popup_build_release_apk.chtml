@@ -1,0 +1,22 @@
+<div class="w2ui-centered form-group">
+
+
+    <label class="control-label" for="input-fe-release-apk-name"
+           style="margin-bottom: 10px;width: 100%;text-align: left;">Apk name:&nbsp;<span id="input-fe-release-apk-nameoutput"></span></label>
+    <input type="text" class="form-control" maxlength="30" id="input-fe-release-apk-name" style="background: #d1d7e6;"
+           placeholder="apk name here (without extension .apk)" value=""/>
+    <br>
+
+    {$mst_if_start}keystores.0}}
+    <label class="control-label" for="input-fe-release-apk-keystores"
+           style="margin-bottom: 10px;width: 100%;text-align: left;">Keystores</label>
+    <select class="form-group" id="input-fe-release-apk-keystores"
+            style="background: #d1d7e6;width:100%;max-width:100%;color: #555;">
+        <option disabled selected value> -- select a keystore -- </option>
+        {$mst_if_start}keystores}}
+        <option value="{{uuid}}">Alias:&nbsp;{{alias}},&nbsp;Description:&nbsp;{{description}}</option>
+        {{/keystores}}
+    </select>
+    <br>
+    {{/keystores.0}}
+</div>

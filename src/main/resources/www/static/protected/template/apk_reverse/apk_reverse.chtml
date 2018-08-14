@@ -1,0 +1,321 @@
+<div>
+<div>
+    <style>
+
+    </style>
+    <div class="container-fluid">
+        <script>
+            RevEnge.chkcks();
+        </script>
+        <!-- App Page Content -->
+        <div class="row" id="apk-reverse-content-div">
+            <div>
+                <div class="col-lg-12">
+                    <h3 class="page-header">APK Studio</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 top-bluesky">
+                <ul class="nav nav-tabs nav-justified" id="apkreverse-main-navtab">
+                    <li class="active">
+                        <a href="#apktools-projects-data" data-toggle="tab">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#apktools-previwNtest-data" data-toggle="tab">Preview & Benchmark</a>
+                    </li>
+                    <li>
+                        <a href="#apktools-debugger-data" data-toggle="tab">Debugger</a>
+                    </li>
+                    <li>
+                        <a href="#apktools-adb-data" data-toggle="tab">APK Installer</a>
+                    </li>
+                    <li>
+                        <a href="#apktools-keytool-data" data-toggle="tab">Keytool</a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <br/>
+                    <!-- Projects-->
+                    <div class="row tab-pane fade in active" id="apktools-projects-data">
+                        {% include projects/include_tab_projects %}
+                    </div>
+                    <!-- ./Projects-->
+
+                    <!-- Preview and test APKs-->
+                    <div class="row tab-pane fade in" id="apktools-previwNtest-data">
+                        {% include apk_previewer/include_tab_apkpreviewer %}
+                    </div>
+                    <!-- ./Preview and test APKs-->
+
+                    <!-- DEBUGGER -->
+                    <div class="row tab-pane fade in" id="apktools-debugger-data">
+                        {% include debugger_ui/include_tab_debugger %}
+                    </div>
+                    <!-- ./DEBUGGER-->
+
+                    <!-- Adb -->
+                    <div class="row tab-pane fade in" id="apktools-adb-data">
+                        {% include adb/include_tab_adb %}
+                    </div>
+                    <!-- ./Adb-->
+
+                    <!-- keytool -->
+                    <div class="row tab-pane fade in" id="apktools-keytool-data">
+                        <div class="col-xs-12">
+                            <br>
+                            <div class="row" id="apkreverse-keystore-list">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./keytool-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- virtual terminal -->
+        <div id="jquery-terminal-resizable" data-size-state="MAXIMIZED">
+            <div style="height: 100%;">
+                <div id="jquery-terminal-header">
+                    <span id="jquery-terminal-header-title">Virtual Terminal</span>
+
+                    <a href="#" onclick="ApkToolModule.minimizeVirtualTerminal(event);"
+                       id="jquery-terminal-header-resize-img" title="minimize terminal">
+                        <img src="/static/public/images/minimize.png"/>
+                    </a>
+                </div>
+                <div id="jquery-terminal"></div>
+            </div>
+            <!-- Define corners -->
+            <div class="ui-resizable-handle ui-resizable-nw" id="nwgrip"></div>
+            <div class="ui-resizable-handle ui-resizable-n" id="ngrip"></div>
+            <div class="ui-resizable-handle ui-resizable-w" id="wgrip"></div>
+            <!-- ./Define corners -->
+            <!-- clear terminal button -->
+            <div id="clear-vir-term" onclick="$('#jquery-terminal').find('.terminal-output').empty();" title="clear terminal"></div>
+            <!-- ./clear terminal button -->
+        </div>
+        <!-- ./virtual terminal -->
+
+        <!-- minified terminal -->
+        <div id="minified-terminal">
+            <span id="minified-terminal-title">Virtual Terminal</span>&nbsp;<span
+                id="minified-terminal-counter"></span>
+            <a href="#" onclick="ApkToolModule.maximizeVirtualTerminal(event);"
+               id="minified-terminal-resize-img" title="maximize terminal">
+                <img src="/static/public/images/maximize.png"/>
+            </a>
+        </div>
+        <!-- ./minified terminal -->
+    </div>
+    <!-- ./App Page Content -->
+</div>
+
+<!-- modal project info -->
+{% include project_editor/include_modal_project_info %}
+<!-- /.modal project info -->
+
+<!-- modal add files to project folder -->
+{% include project_editor/include_modal_add_files %}
+<!-- /.modal add files to project folder -->
+
+<!-- modal replace file -->
+{% include project_editor/include_modal_replace_file %}
+<!-- /.modal replace file -->
+
+<!-- modal modify app icon -->
+{% include project_editor/include_modal_appicon_modifier %}
+<!-- modal modify app icon -->
+
+<!-- modal apk ready QrCode modal -->
+{% include apk_previewer/include_modal_apk_ready_qrcode %}
+<!-- /.modal apk ready QrCode modal -->
+
+<!-- modal ADB connector -->
+{% include adb/include_modal_adb_connector %}
+<!-- /.modal ADB connector -->
+
+<!-- modal create project -->
+{% include projects/include_modal_create_project %}
+<!-- /.modal create project -->
+
+
+<!-- modal create keystore -->
+{% include keytool/include_modal_create_keystore %}
+<!-- /.modal create keystore -->
+
+<!-- modal import keystore -->
+{% include keytool/include_modal_import_keystore %}
+<!-- /.modal import keystore -->
+
+<!-- modal keystore details-->
+{% include keytool/include_modal_keystore_details %}
+<!-- /.modal keystore details-->
+
+<!-- modal apk info -->
+{% include project_editor/include_modal_apk_info %}
+<!-- /.modal apk info -->
+
+<!-- modal manifest entries renamer -->
+{% include project_editor/include_modal_manifest_entries_renamer %}
+<!-- ./modal manifest entries renamer -->
+
+<!-- modal app name modifier -->
+{% include project_editor/include_modal_app_name_modifier %}
+<!-- ./modal app name modifier -->
+
+<!-- modal folder explorer -->
+{% include project_editor/include_modal_folder_explorer %}
+<!-- /.modal folder explorer -->
+
+<!-- mustache templates project info-->
+<script id="apkreverse-project-info-template" type="text/template">
+    {% include project_editor/include_mst_tmpl_project_info %}
+</script>
+<!-- ./mustache templates project info-->
+
+<!-- mustache templates projects list-->
+<script id="apkreverse-projects-list-template" type="text/template">
+    {% include projects/include_mst_tmpl_projects_list %}
+</script>
+<!-- ./mustache templates projects list-->
+
+
+<!-- mustache templates keystores list-->
+<script id="apkreverse-keystores-list-template" type="text/template">
+    {% include keytool/include_mst_tmpl_keystores_list %}
+</script>
+<!-- ./mustache templates keystores list-->
+
+<!-- mustache templates for apk info of new Project -->
+<script id="new-project-apkinfo-content-template" type="text/template">
+    {% include projects/include_mst_tmpl_new_project_apkinfo %}
+</script>
+<!-- ./mustache templates for apk info of new Project -->
+
+<!-- mustache templates project editor : summary, dev-environment, text search, apk builder -->
+<script id="apkreverse-project-editor-template" type="text/template">
+    {% include project_editor/include_mst_tmpl_project_editor %}
+</script>
+<!-- ./mustache templates project editor : summary, dev-environment, text search, apk builder -->
+
+<!-- mustache templates apk previewer result -->
+<script id="apkreverse-apk-previewer-result-template" type="text/template">
+    {% include apk_previewer/include_mst_tmpl_apk_previewer_result %}
+</script>
+<!-- ./mustache templates apk previewer result -->
+
+<!-- mustache templates apk previewer for adb install -->
+<script id="apkreverse-apk-adbinstall-result-template" type="text/template">
+    {% include adb/mst_tmpl_apk_adbinstall_previewer_result %}
+</script>
+<!-- ./mustache templates apk previewer for adb install -->
+
+<!-- mustache templates apk ready info notification -->
+<script id="apkreverse-apk-ready-info-notification-template" type="text/template">
+    {% include apk_previewer/include_mst_tmpl_apk_ready_info_notification %}
+</script>
+<!-- ./mustache templates apk ready info notification -->
+
+<!-- mustache templates for editable file -->
+<script id="apkreverse-file-editable-template" type="text/template">
+    {% include project_editor/mst_tmpl_file_editable %}
+</script>
+<!-- ./mustache templates for editable file -->
+
+<!-- mustache templates for loadable image file -->
+<script id="apkreverse-file-loadable-img-template" type="text/template">
+    {% include project_editor/mst_tmpl_file_loadable_image %}
+</script>
+<!-- ./mustache templates for loadable image file -->
+
+<!-- mustache templates for loadable audio file -->
+<script id="apkreverse-file-loadable-audio-template" type="text/template">
+    {% include project_editor/mst_tmpl_file_loadable_audio %}
+</script>
+<!-- ./mustache templates for loadable audio file -->
+
+<!-- mustache templates for loadable video file -->
+<script id="apkreverse-file-loadable-video-template" type="text/template">
+    {% include project_editor/mst_tmpl_file_loadable_video %}
+</script>
+<!-- ./mustache templates for loadable video file -->
+
+
+<!-- mustache templates for loadable pdf file -->
+<script id="apkreverse-file-pdf-template" type="text/template">
+    {% include project_editor/mst_tmpl_file_loadable_pdffile %}
+</script>
+<!-- ./mustache templates for loadable pdf file -->
+
+
+<!-- mustache templates w2ui popup app info updater -->
+<script id="apkreverse-w2popup-appinfo-template" type="text/template">
+    {% include project_editor/mst_tmpl_w2popup_app_info_body %}
+</script>
+<!-- ./mustache templates w2ui popup app info updater -->
+
+
+<!-- mustache templates w2ui popup build release apk -->
+<script id="apkreverse-w2popup-release-apk-template" type="text/template">
+    {% include project_editor/mst_tmpl_w2popup_build_release_apk %}
+</script>
+<!-- ./mustache templates w2ui popup build release apk -->
+
+
+<!-- mustache templates for projects existing apk files -->
+<script id="apkreverse-project-apkfiles-info-template" type="text/template">
+    {% include project_editor/mst_tmpl_project_apkfiles_info %}
+</script>
+<!-- ./mustache templates for projects existing apk files -->
+
+<!-- mustache templates manifest entries -->
+<script id="apkreverse-project-manifest-rentries-renamer-template" type="text/template">
+    {% include project_editor/include_mst_tmpl_manifest_entries_renamer %}
+</script>
+<!-- ./mustache templates manifest entries -->
+
+<!-- mustache templates app name modifier -->
+<script id="apkreverse-project-app-name-modifier-template" type="text/template">
+    {% include project_editor/include_mst_tmpl_appname_modifier %}
+</script>
+<!-- ./mustache templates app name modifier -->
+
+
+<!-- mustache templates for keystore details -->
+<script id="apkreverse-keystore-details-template" type="text/template">
+    {% include keytool/mst_tmpl_keystore_details %}
+</script>
+<!-- ./mustache templates for keystore details -->
+
+<!-- mustache templates for keystore import validation details -->
+<script id="apkreverse-keystore-import-valid-details-template" type="text/template">
+    {% include keytool/mst_tmpl_import_keystore_validation_details %}
+</script>
+<!-- ./mustache templates for keystore import validation details -->
+
+<!-- mustache templates apk info result -->
+<script id="apkreverse-apk-info-result-template" type="text/template">
+    {% include project_editor/include_mst_tmpl_apk_info_result %}
+</script>
+<!-- ./mustache templates apk info result -->
+
+<!-- mustache templates folder explorer -->
+<script id="apkreverse-folder-explorer-template" type="text/template">
+    {% include project_editor/mst_tmpl_folder_explorer %}
+</script>
+<!-- ./mustache templates folder explorer -->
+
+<!-- mustache templates w2ui popup debugger select Process -->
+<script id="apkreverse-w2popup-debugger-select-proc-template" type="text/template">
+    {% include debugger_ui/mst_tmpl_w2popup_debugger_select_proc %}
+</script>
+<!-- ./mustache templates w2ui popup debugger select Process -->
+
+
+</div>

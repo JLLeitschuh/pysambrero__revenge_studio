@@ -1,0 +1,8 @@
+.CodeMirror-search-match {
+  background: #046300;
+  border-top: 1px solid #048000;
+  border-bottom: 1px solid #049800;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: .4;
+}

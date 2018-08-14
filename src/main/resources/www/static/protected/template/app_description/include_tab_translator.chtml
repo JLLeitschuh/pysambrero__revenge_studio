@@ -1,0 +1,106 @@
+<div class="col-xs-4">
+    <select name="from" id="from" tabindex="0" onchange="" class="form-control">
+        <option value="auto" selected="">auto</option>
+        <option value="sq">Albanian</option>
+        <option value="ar">Arabic</option>
+        <option value="bg">Bulgarian</option>
+        <option value="ca">Catalan</option>
+        <option value="zh-CN">Chinese</option>
+        <option value="hr">Croatian</option>
+        <option value="cs">Czech</option>
+        <option value="da">Danish</option>
+        <option value="nl">Dutch</option>
+        <option value="en">English</option>
+        <option value="et">Estonian</option>
+        <option value="tl">Filipino</option>
+        <option value="fi">Finnish</option>
+        <option value="fr">French</option>
+        <option value="gl">Galician</option>
+        <option value="de">German</option>
+        <option value="el">Greek</option>
+        <option value="iw">Hebrew</option>
+        <option value="hi">Hindi</option>
+        <option value="hu">Hungarian</option>
+        <option value="id">Indonesian</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="lv">Latvian</option>
+        <option value="lt">Lithuanian</option>
+        <option value="mt">Maltese</option>
+        <option value="no">Norwegian</option>
+        <option value="fa">Persian ALPHA</option>
+        <option value="pl">Polish</option>
+        <option value="pt">Portuguese</option>
+        <option value="ro">Romanian</option>
+        <option value="ru">Russian</option>
+        <option value="sr">Serbian</option>
+        <option value="sk">Slovak</option>
+        <option value="sl">Slovenian</option>
+        <option value="es">Spanish</option>
+        <option value="sv">Swedish</option>
+        <option value="th">Thai</option>
+        <option value="tr">Turkish</option>
+        <option value="uk">Ukrainian</option>
+        <option value="vi">Vietnamese</option>
+    </select>
+</div>
+<!--<span>&gt;</span>-->
+<div class="col-xs-4">
+    <select name="to" id="to" tabindex="0" onchange="StoreListingModule.translate();" class="form-control">
+        <option value="sq">Albanian</option>
+        <option value="ar">Arabic</option>
+        <option value="bg">Bulgarian</option>
+        <option value="ca">Catalan</option>
+        <option value="zh-CN">Chinese</option>
+        <option value="hr">Croatian</option>
+        <option value="cs">Czech</option>
+        <option value="da">Danish</option>
+        <option value="nl">Dutch</option>
+        <option value="en">English</option>
+        <option value="et">Estonian</option>
+        <option value="tl">Filipino</option>
+        <option value="fi">Finnish</option>
+        <option value="fr" selected="">French</option>
+        <option value="gl">Galician</option>
+        <option value="de">German</option>
+        <option value="el">Greek</option>
+        <option value="iw">Hebrew</option>
+        <option value="hi">Hindi</option>
+        <option value="hu">Hungarian</option>
+        <option value="id">Indonesian</option>
+        <option value="it">Italian</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+        <option value="lv">Latvian</option>
+        <option value="lt">Lithuanian</option>
+        <option value="mt">Maltese</option>
+        <option value="no">Norwegian</option>
+        <option value="fa">Persian ALPHA</option>
+        <option value="pl">Polish</option>
+        <option value="pt">Portuguese</option>
+        <option value="ro">Romanian</option>
+        <option value="ru">Russian</option>
+        <option value="sr">Serbian</option>
+        <option value="sk">Slovak</option>
+        <option value="sl">Slovenian</option>
+        <option value="es">Spanish</option>
+        <option value="sv">Swedish</option>
+        <option value="th">Thai</option>
+        <option value="tr">Turkish</option>
+        <option value="uk">Ukrainian</option>
+        <option value="vi">Vietnamese</option>
+    </select>
+</div>
+
+<div class="col-xs-4">
+    <button class="btn btn-success btn-sm" onclick="StoreListingModule.translate()">
+        Translate
+    </button>
+</div>
+
+<div class="col-xs-12">
+    <textarea rows="10" style="width: 100%; padding: 10px; resize: vertical; margin-top: 20px;" id="textsrc" class="form-control"
+              placeholder="text here..."
+              autocomplete="off"></textarea>
+</div>

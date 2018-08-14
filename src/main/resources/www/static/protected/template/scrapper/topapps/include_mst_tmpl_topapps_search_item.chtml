@@ -1,0 +1,62 @@
+<li class="list-group-item" id="{{app.appId}}">
+    <div>
+        <div class="applist-descr-container">
+            <div>
+                <span class="applist-counter">{{counter}}</span>&nbsp;
+
+                {$mst_if_start}app.price}}
+                <span class="applist-price">{{app.price}}</span>
+                {{/app.price}}
+                {$mst_else_start}app.price}}
+                <span class="applist-price">FREE</span>&nbsp;
+                {{/app.price}}
+
+                <div class="applist-rating-div">
+                    <span class="app-rating-star">&#9733;&nbsp;</span><span class="app-rating-sp">{{app.rating}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="applist-icon-container">
+            <a href="https://play.google.com/store/apps/details?id={{app.appId}}" target="_blank">
+                <img alt="icon" src="{{icon}}" class="applist-icon-img lazy"/>
+            </a>
+        </div>
+        <div class="applist-details-container">
+            <div>
+                <a href="https://play.google.com/store/apps/details?id={{app.appId}}" target="_blank"
+                   class="applist-li-app-link" title="{{app.name}}"><span class="applist-appname-sp">{{app.name}}</span></a>
+            </div>
+            <div><a href="{{developer_link}}" target="_blank" class="applist-li-dev-link" title="{{app.developer}}"><span
+                    class="applist-developer-sp">{{app.developer}}</span></a></div>
+
+            <div class="btn-group dropdown">
+                <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                    Actions
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-topapps{{app.appId}}">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.getAppASO(event, '{{app.appId}}', 'appBrain');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO - AppBrain</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.getAppASO(event, '{{app.appId}}', 'searchman');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO - Searchman</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.getAppDetails(event, '{{app.appId}}');"><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;App details</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.addAppToFavorite(event, '{{app.appId}}');"><span class="app-rating-star">&#9733;&nbsp;</span>Add to favorites</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.checkAppCountries(event, '{{app.appId}}');"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;Check countries</a>
+                    </li>
+                    <li  role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.downloadApk(event, '{{app.appId}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download apk</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="ScrapperModule.openApkDownloadPage(event, '{{app.appId}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download from ApkPure</a>
+                    </li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" target="_blank" onclick="ScrapperModule.installOnDevice(event, '{{app.appId}}', '{{app.name}}')"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;Launch on
+                        device</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</li>

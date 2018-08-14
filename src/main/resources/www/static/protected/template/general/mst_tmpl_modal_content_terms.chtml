@@ -1,0 +1,79 @@
+<div>
+    <div class="modal-header modal-header-dark">
+        <h3 class="modal-title">Terms and conditions</h3>
+    </div>
+
+    <div class="modal-body" style="max-height: 390px; overflow: auto;">
+        <p style="color: #37901b;"><b>IMPORTANT: BY ACCESSING AND USING REVENGE-STUDIO, YOU AGREE TO THE CERTAIN TERMS
+            AND
+            CONDITIONS SET FORTH IN THE END-USER LICENSE AGREEMENT AND QUOTED BELOW.
+            IF YOU DO NOT AGREE WITH THESE TERMS OR CONDITIONS, DO NOT ACCESS OR USE REVENGE-STUDIO.</b></p>
+
+        <p>&#9673; By using REVENGE-STUDIO, you signify that you have read, understood and accepted these Terms and
+            Conditions.
+        </p>
+
+        <p>&#9673; You confirm that you are either older than 18 years or have the permission of your parent or guardian
+            to use REVENGE-STUDIO.</p>
+
+        <p>&#9673; By clicking on the "AGREE" button at the bottom of this screen you are confirming that you will use
+            REVENGE-STUDIO in accordance with this Acceptable Use Policy (AUP)</p>
+
+        <p>&#9673; These Terms and Conditions shall commence to have effect when you start using REVENGE-STUDIO and
+            will continue
+            until you uninstall this product from your computer.
+        </p>
+
+        <p>&#9673; The Software includes decompiling functionalities that enables reproducing Dalvik
+            bytecode from the original binary code.
+            Licensee acknowledges that binary code and source code might be protected by copyright and
+            trademark laws. </p>
+
+        <p>&#9673; Before using REVENGE-STUDIO, Licensee should make sure that decompilation of binary code is not
+            prohibited by the applicable license agreement or that Licensee has obtained permission to
+            decompile
+            the binary code from the copyright owner.</p>
+
+        <p>&#9673; Using REVENGE-STUDIO is entirely optional. Licensor does neither encourage nor condone the use
+            of
+            REVENGE-STUDIO, and disclaims any liability for Licensee's use of REVENGE-STUDIO in violation
+            of applicable laws.
+        </p>
+
+        <p>&#9673; We neither warrant nor represent that your use of REVENGE-STUDIO will not infringe the rights of
+            third parties.
+        </p>
+
+        <p>&#9673; REVENGE-STUDIO engine is based on a fork of <a href="https://ibotpeaches.github.io/Apktool/"
+                                                                  target="_blank">Apktool</a>.
+            So, same as Apktool, REVENGE-STUDIO is neither intended for piracy nor any other non-legal use.
+            It could be used for adding some features or support for custom platforms, analyzing
+            applications and much more.
+        </p>
+
+
+        <p>&#9673; REVENGE-STUDIO is a <a href="https://en.wikipedia.org/wiki/Donationware"
+                                          target="_blank">Donationware</a>,
+            which means that the software is made available, fully
+            operational, unrestricted for
+            use free of charge, in return of one or many donations to be paid to the
+            original author.</p>
+
+        <p>&#9673; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+            EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+            IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+            CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+            TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+            SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Disagree
+        </button>
+        <button type="button" class="btn btn-success btn-sm" onclick="SignIn.agreeTermsAndCond(event);">
+            Agree
+        </button>
+    </div>
+</div>

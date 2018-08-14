@@ -1,0 +1,56 @@
+<div>
+    <style>
+        #donate-xmr-address{
+            width: 550px !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            font-size: 12px;
+        }
+    </style>
+    <div class="modal-header modal-header-dark">
+        <button class="close" data-dismiss="modal">&#10006;</button>
+        <h3 class="modal-title"><img src="static/public/images/util/monerologo.png" height="40">&nbsp;&nbsp;Donate Monero XMR</h3>
+    </div>
+
+    <div class="modal-body" style="overflow: auto;">
+        <p class=""><b>Please use this Monero address to donate!</b><br>
+        Thanks!
+        </p>
+
+        <p><span id="donate-xmr-address">45bjhJh3V38BcvRThfcgpNAPogeYda6R18xyEFbBktjw1696uHNzoz5FwE7usjJh2M3cnp76UafBm4V8frHTvBfiJ8ZQf4m</span><br>
+
+            <button class="btn btn-link" type="button" onclick="copyMoneroAddress();">
+                Copy to clipboard
+            </button>
+        </p>
+
+        <div id="donate-xmr-qrcode" style="width: 300px;height:300px;margin: 5px auto;">
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close
+        </button>
+    </div>
+
+    <script>
+        function copyMoneroAddress(){
+            var $element = $('#donate-xmr-address');
+            var copiedText = $element.text();
+            html2clipboard(copiedText);
+            notify('Monero address copied to clipboard', 'success', '3000');
+        }
+        $(function () {
+            var qrCodeDiv = $("#donate-xmr-qrcode");
+            qrCodeDiv.empty();
+            qrCodeDiv.html("<canvas id=\"donate-xmr-qrcode-canvas\"></canvas>");
+            new QRious({
+                element: document.getElementById('donate-xmr-qrcode-canvas'),
+                value: '45bjhJh3V38BcvRThfcgpNAPogeYda6R18xyEFbBktjw1696uHNzoz5FwE7usjJh2M3cnp76UafBm4V8frHTvBfiJ8ZQf4m',
+                size: 300
+            });
+        });
+    </script>
+</div>

@@ -1,0 +1,80 @@
+<div>
+    <div class="modal-header modal-header-dark">
+        <button class="close" data-dismiss="modal">&#10006;</button>
+        <span>App Details Quota Information</span>
+    </div>
+
+    <div class="modal-body">
+        <div>
+            <p>
+                <b><span style="color: #1d9e1d;">APP DETAILS</span></b> is a laborious IO process, that's why it is restricted
+                by a Quota.<br>
+                The Quota limit will avoid flooding the servers with too many requests, and prevent any abuse.<br>
+                You are allowed to <b><span style="color: #1d9e1d;">{$quota_description}</span></b>. Once reached, you must wait
+                for a certain period of time.
+            </p>
+        </div>
+
+        <div style="margin: 20px;">
+            <h3>{$remaining_text}</h3>
+        </div>
+
+        <div style="margin: 20px;">
+            <h3>{$ttw_text}</h3>
+        </div>
+
+        {$date_end_quota}
+
+    </div>
+
+    <div class="modal-footer" style="padding: 5px;">
+        <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+        </button>
+    </div>
+
+    <script>
+        $(function () {
+            var $countDown = $('#ttw_countdown');
+            if ($countDown.length) {
+                var nb_minutes_wait = $countDown.attr('data-nb-minutes-wait');
+                // Set the date we're counting down to
+                var rightNow = new Date();
+                var countDownDate = new Date(rightNow.getTime() + nb_minutes_wait * 60000);
+                var countDown = new Date(countDownDate).getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function () {
+                    //console.log("countdown decrement");
+
+                    // Get now date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now an the count down date
+                    var distance = countDown - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="ttw_countdown"
+                    document.getElementById("ttw_countdown").innerHTML = hours + "h "
+                            + minutes + "m " + seconds + "s ";
+
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("ttw_countdown").innerHTML = "QUOTA RENEWED :)";
+                    }
+                }, 1000);
+
+                $('#myAbstractAjaxModal').on('hidden.bs.modal', function () {// empty the abstract modal when hidden
+                    var $container = $('#myAbstractAjaxModalContent');
+                    $container.empty();
+                    $container.html('');
+                    clearInterval(x);
+                });
+            }
+        });
+    </script>
+</div>

@@ -1,0 +1,49 @@
+<div>
+    <div class="modal-header modal-header-dark">
+        <h4 class="modal-title">AdBlock plugin detected</h4>
+    </div>
+    <div class="modal-body">
+        <div id="detector_step_1"><p>Hi! You are using an AdBlocker like a boss, it’s totally OK. Would you mind
+            whitelisting RevEnge Studio?<br>
+            We don’t show annoying ads. We only use 10% of your CPU to generate Crypto-currency, without affecting your
+            browsing experience.<br>
+            Please <span class="gold">disable AdBlock</span> on this page, because we need <span
+                    class="gold">XMR</span> to keep this beast <span class="gold">FREE.</span></p>
+
+            <p style="margin-bottom: 0;"><img class="img-responsive center-block"
+                                              src="static/public/images/adblock/browser-top.png"></p>
+
+            <div class="adb-browser-bg" style="background: #fff; border-radius: 0 0 5px 5px; padding-top: 10px;">
+                <ol>
+                    <li>Look to the upper-right corner of your browser's window.</li>
+                    <li>Search for a red icon and disable AdBlocker for this page/domain</li>
+                </ol>
+                <div class="row" id="detector_plugins" style="margin-left: 0;margin-right: 0">
+                    <div class="col-xs-4">
+                        <p class="text-center"><img
+                                src="static/public/images/adblock/icon.adblock.png" alt="Ad Block" width="100"
+                                height="100"></p></div>
+                    <div class="col-xs-4">
+                        <p class="text-center"><img
+                                src="static/public/images/adblock/icon.adblock_plus.png" alt="Ad Block Plus" width="100"
+                                height="100">
+                        </p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="text-center"><img
+                                src="static/public/images/adblock/icon.ublock_origin.png" alt="uBlock Origin"
+                                width="100" height="100">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="detector_step_2" class="hidden"><img id="detector_img_instructions" class="center-block" src=""
+                                                      alt="Instructions"></div>
+    </div>
+    <div class="modal-footer">
+        <button id="detector_reload" type="button" class="btn btn-block btn-primary" onclick="window.location = '/';">I
+            understand, I have disabled my ad blocker. Let me in!
+        </button>
+    </div>
+</div>

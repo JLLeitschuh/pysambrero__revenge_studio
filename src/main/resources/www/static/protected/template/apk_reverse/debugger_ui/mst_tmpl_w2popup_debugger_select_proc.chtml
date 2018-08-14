@@ -1,0 +1,19 @@
+<div class="w2ui-centered form-group">
+
+    {$mst_if_start}listProcesses.0}}
+    <label class="control-label" for="input-deb-running-procs"
+           style="margin-bottom: 10px;width: 100%;text-align: left;">Running processes</label>
+    <select class="form-group" id="input-deb-running-procs"
+            style="background: #d1d7e6;width:100%;max-width:100%;color: #555;">
+        <option disabled selected value> -- select a process --</option>
+        <option value="ALL">All processes</option>
+        {$mst_if_start}listProcesses}}
+        <option value="{{PID}}">{{NAME}}</option>
+        {{/listProcesses}}
+    </select>
+    <br>
+    {{/listProcesses.0}}
+    {$mst_else_start}listProcesses.0}}
+    <span>No process is running!</span>
+    {{/listProcesses.0}}
+</div>

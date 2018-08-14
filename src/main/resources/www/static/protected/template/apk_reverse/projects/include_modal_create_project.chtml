@@ -1,0 +1,62 @@
+<div class="modal fade" id="modalCreateProject" tabindex="-1" role="dialog"
+     aria-labelledby="modalCreateProjectLabel" data-backdrop="static" data-keyboard="false"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 55px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <span>Create New Project fom an APK file</span>
+            </div>
+            <div class="modal-body">
+
+                <!-- Sub Modal, project name -->
+                <div class="modal submodal" id="new-project-name-submodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p class="text-center">Please provide a project name</p>
+                                <hr/>
+                                <form class="form-horizontal" onsubmit="return false;">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="new_project_name_input">Project Name:</label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control max-length" maxlength="30" id="new_project_name_input" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-default btn-sm" data-dismiss="submodal" aria-hidden="true">Cancel
+                                </button>
+                                <button class="btn btn-success btn-sm" onclick="ApkToolModule.createNewProject();">Create Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Sub Modal, project name -->
+
+                <div style="position: absolute;right: 25px;top: 10px;z-index: 1001;">
+                    <button class="btn btn-success btn-lg" id="new-project-next-step" style="margin-top: 15px;"
+                            onclick="ApkToolModule.openNewProjectSubModal();">
+                        Next
+                    </button>
+                </div>
+                <!-- upload apk file form-->
+                <div>
+                    <form id="apkNewProjectDropzone" action="/fake_url" class="dropzone" method="post"
+                          enctype="multipart/form-data" style="text-align: center;">
+                        <div class="dz-message">Drop apk file here or click here to select
+                        </div>
+                    </form>
+                </div>
+                <!-- ./upload apk file form-->
+
+                <!-- new project  => apk info content-->
+                <div id="new-project-apkinfo-content">
+                </div>
+                <!-- ./new project  => apk info content-->
+            </div>
+        </div>
+    </div>
+</div>

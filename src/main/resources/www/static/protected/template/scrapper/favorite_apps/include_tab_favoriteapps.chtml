@@ -1,0 +1,39 @@
+<div class="col-xs-12">
+
+    <div class="row" id="favoriteapps-search-filter" style="display: none;">
+        <div class="col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                <input type="text" class="form-control filter-favoriteapps-list"
+                       placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="favoriteapps-filter-in"/>
+                <span class="favoriteapps-filter-counter" id="favoriteapps-search-filter-count"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="favoriteapps-search-filter-scroll"
+         style="display: none;position: fixed;bottom: 10px;right: 10px;z-index: 5;">
+        <div class="col-xs-2">
+            <a href="#" title="Back to top" onclick="smoothScroll($('#wrapper'),600);"><img id="scroll-to-top-img"
+                                                                                            style="width: 40px; height: 40px;"
+                                                                                            src="static/public/images/util/back_to_top.png"/></a>
+        </div>
+        <div class="col-xs-10">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                <input type="text" class="form-control filter-favoriteapps-list"
+                       placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="favoriteapps-filter-in-scroll"/>
+                <span class="favoriteapps-filter-counter" id="favoriteapps-search-filter-count-scroll"></span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <div id="no-favoriteapp-yet-div" class="fav-app-date-div">
+            You don't have any favorite app yet!
+        </div>
+        <ul id="list-result-favoriteapps" class="list-group">
+        </ul>
+    </div>
+</div>

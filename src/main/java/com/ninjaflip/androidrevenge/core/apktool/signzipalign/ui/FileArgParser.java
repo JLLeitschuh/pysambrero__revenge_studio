@@ -1,0 +1,89 @@
+package com.ninjaflip.androidrevenge.core.apktool.signzipalign.ui;
+
+
+import com.ninjaflip.androidrevenge.core.apktool.signzipalign.util.FileUtil;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * Parses and checks the file input argument
+ */
+public class FileArgParser {
+
+    public List<File> parseAndSortUniqueFilesNonRecursive(String[] files, String extensionFilter) {
+        if (files == null) {
+            throw new IllegalArgumentException("input files must not be null");
+        }
+
+        if (files.length == 0) {
+            return Collections.emptyList();
+        }
+
+        Set<File> fileSet = new HashSet<File>();
+
+        for (String file : files) {
+            File apkFile = new File(file);
+
+            if (apkFile.exists() && apkFile.isDirectory()) {
+                for (File dirFile : apkFile.listFiles()) {
+                    if (isCorrectFile(dirFile, extensionFilter)) {
+                        fileSet.add(dirFile);
+                    }
+                }
+            } else if (isCorrectFile(apkFile, extensionFilter)) {
+                fileSet.add(apkFile);
+            } else {
+                throw new IllegalArgumentException("provided apk path or file '" + file + "' does not exist");
+            }
+        }
+
+        List<File> resultList = new ArrayList<File>(fileSet);
+        Collections.sort(resultList);
+        return resultList;
+    }
+
+    public static List<String> getDirSummary(List<File> files) {
+        Set<File> parents = new HashSet<File>();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                parents.add(file);
+            } else {
+                parents.add(file.getParentFile());
+            }
+        }
+
+        // java 6 code
+        /*List<String> result = new ArrayList<String>();
+        for (File f : parents) {
+            try {
+                String canonicalPath = f.getCanonicalPath();
+                if (!result.contains(canonicalPath)) {
+                    result.add(canonicalPath);
+                }
+            } catch (IOException e) {
+                throw new IllegalStateException("could not get dir summary", e);
+            }
+        }
+        Collections.sort(result);
+        return result;*/
+
+        return parents.stream().map(f -> {
+            try {
+                return f.getCanonicalPath();
+            } catch (IOException e) {
+                throw new IllegalStateException("could not get dir summary", e);
+            }
+        }).sorted().collect(Collectors.toList());
+    }
+
+    private static boolean isCorrectFile(File f, String extensionFilter) {
+        if (f != null && f.exists() && f.isFile()) {
+            return FileUtil.getFileExtension(f).equalsIgnoreCase(extensionFilter);
+        }
+        return false;
+    }
+
+}

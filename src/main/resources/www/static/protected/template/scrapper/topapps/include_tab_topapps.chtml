@@ -1,0 +1,108 @@
+<div class="col-xs-12 col-md-8 col-lg-12">
+    <form id="search-topapps-form">
+        <fieldset class="fieldset-custom">
+            <legend class="legend-custom">Top Apps Form</legend>
+
+            <button class="btn btn-link reset-form-button" type="button"
+                    onclick="ScrapperModule.resetTopAppsForm(event);">
+                reset form
+            </button>
+
+            <button class="btn btn-link clear-results-button" type="button"
+                    onclick="ScrapperModule.clearTopAppsResults(event);">
+                clear results
+            </button>
+
+            <div class="col-lg-3 col-xs-6">
+                <label class="control-label">Language</label>
+                <select class="form-control" name="language"
+                        id="topapps_language_select"
+                        style="width:100%;max-width:100%;">
+                </select>
+
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <label class="control-label">Country</label>
+                <select class="form-control" name="country" id="topapps_country_select"
+                        style="width:100%;max-width:100%;">
+                </select>
+            </div>
+
+
+            <div class="col-lg-3 col-xs-6">
+                <label class="control-label">Collection</label>
+                <select class="form-control" name="collection"
+                        id="topapps_collection_select"
+                        style="width:100%;max-width:100%;">
+                </select>
+
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <label class="control-label">Category</label>
+                <select class="form-control" name="category" id="topapps_category_select"
+                        style="width:100%;max-width:100%;">
+                </select>
+            </div>
+
+            <div class="col-xs-12" style="margin-bottom: 10px;">
+                <button class="btn btn-success btn-sm" type="submit" style="margin-top: 10px;"
+                        onclick="ScrapperModule.submitTopAppsForm(event);">
+                    Go!
+                </button>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+
+<div class="col-xs-12">
+
+    <div style="margin-bottom: 15px;color: #888;">
+        <span id="topapps-search-duration" style="display: none;"></span>
+    </div>
+
+    <div class="row" id="topapps-search-filter" style="display: none;">
+        <div class="col-xs-12">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                <input type="text" class="form-control filter-topapps-list"
+                       placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="topapps-filter-in"/>
+                <span class="topapps-filter-counter" id="topapps-search-filter-count"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="topapps-search-filter-scroll"
+         style="display: none;position: fixed;bottom: 10px;right: 10px;z-index: 5;">
+        <div class="col-xs-2">
+            <a href="#" title="Back to top" onclick="smoothScroll($('#wrapper'),600);"><img id="scroll-to-top-img"
+                                                                                            style="width: 40px; height: 40px;"
+                                                                                            src="static/public/images/util/back_to_top.png"/></a>
+        </div>
+        <div class="col-xs-10">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search"></span>
+                <input type="text" class="form-control filter-topapps-list"
+                       placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="topapps-filter-in-scroll"/>
+                <span class="topapps-filter-counter" id="topapps-search-filter-count-scroll"></span>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: inline-block;">
+        <ul id="list-result-topapps-search" class="list-group">
+        </ul>
+    </div>
+
+    <div style="margin-top: 30px;margin-bottom: 70px;">
+        <button class="play-button" id="show-more-topapps-button" data-next-page="" data-language="" data-country="" data-collection="" data-category=""
+                onclick="ScrapperModule.loadMoreTopAppsResult(this);"
+                style="display: none;"> Show More
+        </button>
+        <div class="bottom-loading" id="bottom-topapps-loading-gif" style="display: none;"></div>
+    </div>
+
+</div>

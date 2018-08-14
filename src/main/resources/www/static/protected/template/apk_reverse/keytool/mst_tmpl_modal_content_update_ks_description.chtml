@@ -1,0 +1,39 @@
+<div>
+    <div class="modal-header modal-header-dark">
+        <button class="close" data-dismiss="modal">&#10006;</button>
+        <span>Update Keystore Description</span>
+    </div>
+    <!-- update ks description form-->
+    <form class="form-horizontal" onsubmit="return false;">
+        <div class="modal-body">
+            <div style="text-align: center;margin: 20px;">
+                <h3><span>Keystore alias: {$ks_alias}</span></h3>
+            </div>
+            <div>
+                <input id="ks_uuid_update" type="hidden" value="{$ks_uuid}" autocomplete="off"/>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="ks_description_update">New Description&nbsp;<span style="color: red;">*</span></label>
+
+                    <div class="col-sm-9">
+                        <textarea rows="5" style="width: 100%; padding: 10px; resize: vertical;"
+                                  id="ks_description_update"
+                                  name="ks_description_update"
+                                  class="form-control max-length"
+                                  placeholder="A little description about this keystore..."
+                                  maxlength="200">{$ks_description}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal-footer" style="padding: 5px;">
+            <button type="button" class="btn btn-success push_right btn-sm" onclick="ApkToolModule.keystoreSubmitUpdate();">Submit
+            </button>
+            <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+            </button>
+        </div>
+    </form>
+    <!-- ./update ks description form-->
+</div>

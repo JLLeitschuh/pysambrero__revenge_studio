@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="referrer" content="no-referrer">
+
+    <title>RevEnge Studio</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../../../static/public/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Base CSS -->
+    <link href="../../../static/public/css/base.css" rel="stylesheet">
+    <link href="../../../static/public/images/favicon.ico?v=2" rel="shortcut icon" type="image/x-icon"/>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery TODO From CDN in production mode-->
+    <script src="../../../static/public/js/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../../static/public/js/bootstrap.min.js"></script>
+
+    <style>
+        html {
+            background: #222;
+        }
+
+        body {
+            background: url("../../../static/public/images/401-error-bg.jpg") no-repeat center center fixed;
+            font-size: 1.5em;
+            color: #222;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+            width: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        #wrap {
+            min-height: 100%;
+        }
+
+        #redirect-panel {
+            opacity: 1;
+            position: relative;
+            margin-top: 0; /* negative value of footer height */
+            height: 50px;
+            clear: both;
+            padding-top: 20px;
+            font-size: 26px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<noscript>
+    <h3>JavaScript is disabled! Why you want to do so?
+        Please enable JavaScript in your web browser!</h3>
+
+    <style type="text/css">
+        * {
+            display: none;
+        }
+    </style>
+</noscript>
+
+<div id="wrapper">
+    <div id="wrap">
+        <div class="panel-default" id="redirect-panel">
+
+            <div class="panel-body" style="text-align: center;">
+                <h1 style="color: red;">Please check your internet connection!</h1>
+                click <a href="/api/public/signin">here to login!</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

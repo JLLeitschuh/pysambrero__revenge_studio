@@ -1,0 +1,32 @@
+<div class="modal fade" id="modalConfirmSaveDescription" tabindex="-1" role="dialog"
+     aria-labelledby="modalConfirmSaveDescriptionLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="width: 450px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <span>Confirm override</span>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="modal_language_code" id="modal_language_code" value=""/>
+                <input type="hidden" name="modal_language_flag" id="modal_language_flag" value=""/>
+                <input type="hidden" name="modal_app_name" id="modal_app_name" value=""/>
+                <input type="hidden" name="modal_short_desc" id="modal_short_desc" value=""/>
+                <input type="hidden" name="modal_long_desc" id="modal_long_desc" value=""/>
+                A description in&nbsp;<span style="color: red;" id="modal_language_name">This</span>&nbsp;language
+                already exist!<br>
+                Do you want to override it?
+
+            </div>
+            <div class="modal-footer" style="padding: 5px;">
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-danger push_right btn-sm"
+                        onclick="StoreListingModule.confirmOverrideDescription(document.getElementById('modal_language_code').value, document.getElementById('modal_language_name').innerText, document.getElementById('modal_language_flag').value, document.getElementById('modal_app_name').value,document.getElementById('modal_short_desc').value,document.getElementById('modal_long_desc').value);">
+                    Override
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>

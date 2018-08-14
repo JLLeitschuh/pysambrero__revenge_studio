@@ -1,0 +1,50 @@
+<div class="col-lg-10">
+
+    <form id="search-singleapp-form" name="search-singleapp-form">
+        <fieldset class="fieldset-custom">
+            <legend class="legend-custom">detailed search for a single app</legend>
+
+            <button class="btn btn-link quota-info-button" type="button"
+                    onclick="ScrapperModule.getQuotaInfoAppDetails(event);">
+                Quota info
+            </button>
+
+            <div class="col-xs-12" style="margin-bottom: 15px; margin-top: 10px;">
+                <div class="input-group">
+                    <input class="form-control"
+                           placeholder="google play url or package name here..."
+                           name="appId-singleapp"
+                           id="appId-singleapp"
+                           type="text"
+                           autocomplete="off" value="" style="z-index: 0;">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit"
+                                onclick="ScrapperModule.submitSingleAppScrapperForm(event);">
+                            Go!
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+<div class="col-lg-10">
+    <div style="margin-bottom: 15px;color: #888;">
+        <span id="search-duration" style="display: none;"></span>
+    </div>
+
+    <!-- App search results here-->
+    <ul id="single-app-scrapper-results" class="list-unstyled list-group">
+    </ul>
+
+    <div id="progress-appsearch-scrapper" class="scrapper-progress-div">
+        <button class="btn btn-hot btn-sm cancel-scrapper-btn" id="cancel-appsearch-scrapper" data-process-id=""
+                onclick="ScrapperModule.cancelSingleAppScrapping();">
+            Cancel
+        </button>
+        <span>0%</span>
+    </div>
+
+</div>

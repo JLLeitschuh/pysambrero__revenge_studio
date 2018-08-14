@@ -1,0 +1,23 @@
+<div class="modal fade" id="modalAppNameModifier" tabindex="-1" role="dialog"
+     aria-labelledby="modalAppNameModifierLabel" data-backdrop="static" data-keyboard="false" aria-hidden="false">
+    <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>App Name Modifier</span>
+                </div>
+            </div>
+            <div class="modal-body app-name-modifier-modal-body">
+                <div id="app-name-modifier-container" style="max-height: 430px;overflow-y: auto;overflow-x: hidden;"></div>
+            </div>
+            <div class="modal-footer" style="padding: 5px;">
+                <button id="modalAppNameModifier-submit" type="button" class="btn btn-success push_right btn-sm" onclick="ApkToolModule.toolsAppNameModifierPerform();">
+                    Submit
+                </button>
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

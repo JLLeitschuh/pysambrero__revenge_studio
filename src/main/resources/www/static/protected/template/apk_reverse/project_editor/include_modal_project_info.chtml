@@ -1,0 +1,16 @@
+<div class="modal fade" id="modalProjectInfo" tabindex="-1" role="dialog"
+     aria-labelledby="modalProjectInfoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>Project info</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="project-info-container"></div>
+            </div>
+        </div>
+    </div>
+</div>

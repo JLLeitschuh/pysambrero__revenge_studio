@@ -1,0 +1,14 @@
+<div class="col-xs-12">
+    <div>
+        <h4 class="">Debug connected devices&nbsp;<span id="deb-selected-proc-name" style="color: #ff7441;"></span></h4>
+
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-xs-12">
+                <div id="apkreverse-debugger-container" data-proc-pid="" data-proc-name="">
+                    <div id="toolbar_debugger"></div>
+                    <div id="layout_debugger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

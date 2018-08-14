@@ -1,0 +1,33 @@
+<div>
+    <div class="modal-header modal-header-dark">
+        <button class="close" data-dismiss="modal">&#10006;</button>
+        <h3 class="modal-title">About us</h3>
+    </div>
+
+    <div class="modal-body" style="max-height: 390px; overflow: auto;">
+        <p class="about-us-head"><b>The project is nicknamed REVENGE Studio, which means Reverse Engineering
+            Studio.</b></p>
+
+        <p><span class="about-us-quote"><q><cite>Share your knowledge. It’s a way to achieve immortality.</cite></q></span><br>
+            <span class="about-us-quote-aut">Dalai Lama.</span>
+        </p>
+
+        <table style="margin-top: 20px;">
+            <tr>
+                <td>
+                    <div class="about-us-team">
+                        <div style="font-size: large;"><b>Rakesh Kumar Singh</b></div>
+                        <div><i>Web & Mobile Expert</i></div>
+                        <div>Team Leader</div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close
+        </button>
+    </div>
+</div>

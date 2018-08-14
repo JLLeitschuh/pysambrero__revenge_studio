@@ -1,0 +1,23 @@
+<div class="col-xs-12">
+    <ul id="projects-hidden-navtab" class="nav nav-tabs hidden">
+        <li class="active">
+            <a href="#tab-apkreverse-projects-list" data-toggle="tab">Projects list</a>
+        </li>
+        <li>
+            <a href="#tab-apkreverse-project-editor" data-toggle="tab">Project editor</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <br/>
+        <!-- List Projects-->
+        <div class="row tab-pane fade in active" id="tab-apkreverse-projects-list">
+        </div>
+        <!-- ./List Projects-->
+
+        <!-- Project editor-->
+        <div class="row tab-pane fade in" id="tab-apkreverse-project-editor">
+        </div>
+        <!-- ./Project editor-->
+    </div>
+</div>

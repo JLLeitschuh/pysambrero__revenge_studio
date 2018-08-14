@@ -1,0 +1,17 @@
+<div>
+    <input id="appname-modifier-declaration-input" type="hidden" value="{{declaration}}">
+    <input id="appname-modifier-tagName-input" type="hidden" value="{{tagName}}">
+    {$mst_if_start}appNames.0}}
+    <div class="row">
+        <div class="col-xs-12">
+            <ul id="ul-appname-modifier">
+                {$mst_if_start}appNames}}
+                <li class="li-app-name-modif" data-appname-language="{{key}}" data-appname-name="{{value}}">
+                    <span>{{languageName}} language ({{key}})&nbsp;&nbsp;</span><input maxlength="100" placeholder="{{value}}" value="{{value}}" class="input-app-name-modif" type="text"/>
+                </li>
+                {{/appNames}}
+            </ul>
+        </div>
+    </div>
+    {{/appNames.0}}
+</div>

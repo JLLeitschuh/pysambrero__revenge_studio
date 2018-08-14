@@ -1,0 +1,21 @@
+<div class="col-lg-12">
+    <div class="form-group">
+        <h3 class="pull-left">Original text</h3>
+        <input type="button" value="Reset" class="btn btn-danger btn-sm pull-right" style="margin-bottom: 15px;"
+               onclick="KeywordToolsModule.resetUnicodeDetector();">
+    </div>
+
+    <textarea rows="8" style="width: 100%; padding: 10px; resize: vertical;" id="detector-textarea"
+              name="detector-textarea"
+              class="max-length form-control"
+              placeholder="paste text here..."
+              autocomplete="off" maxlength="4000"></textarea>
+</div>
+
+<div class="col-lg-12" style="margin-bottom: 15px;">
+    <h3>Result</h3>
+
+    <div class="form-control character-container" id="character-container"
+         style="min-height: 62px; height: auto; padding: 10px 10px 10px 10px;">
+    </div>
+</div>

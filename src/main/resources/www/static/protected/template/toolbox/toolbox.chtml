@@ -1,0 +1,62 @@
+<div>
+    <div class="container-fluid">
+        <script>
+            RevEnge.chkcks();
+        </script>
+        <!-- App Page Content -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Toolbox</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 top-bluesky">
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#converters-data" data-toggle="tab">Converters</a>
+                    </li>
+                    <li>
+                        <a href="#encryption-data" data-toggle="tab">Encryption</a>
+                    </li>
+                    <li>
+                        <a href="#jsontools-data" data-toggle="tab">JSON</a>
+                    </li>
+                    <li>
+                        <a href="#externaltools-data" data-toggle="tab">External tools</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <br/>
+
+                    <!-- converters -->
+                    <div class="row tab-pane fade in active" id="converters-data">
+                        {% include include_tab_converters %}
+                    </div>
+                    <!-- converters -->
+
+                    <!-- Encryption-->
+                    <div class="row tab-pane fade in" id="encryption-data">
+                        {% include include_tab_encryption %}
+                    </div>
+                    <!-- Encryption-->
+
+                    <!-- JSON formatter/validator-->
+                    <div class="row tab-pane fade in" id="jsontools-data">
+                        {% include include_tab_jsontools %}
+                    </div>
+                    <!-- .:JSON formatter/validator-->
+
+                    <!-- External tools-->
+                    <div class="row tab-pane fade in" id="externaltools-data">
+                        {% include include_tab_externaltools %}
+                    </div>
+                    <!-- External tools-->
+                </div>
+            </div>
+        </div>
+        <!-- ./App Page Content -->
+    </div>
+</div>

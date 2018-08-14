@@ -1,0 +1,20 @@
+<div class="modal fade" id="modalApkReadyQrCode" tabindex="-1" role="dialog"
+     aria-labelledby="modalApkReadyQrCodeLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="min-width: 400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <span>Scan QR Code with your device</span>
+            </div>
+            <div class="modal-body">
+                <div id="apk-ready-qrcode" style="width: 300px;height:300px;margin: 20px auto;">
+                </div>
+            </div>
+            <div class="modal-footer" style="padding: 5px;">
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

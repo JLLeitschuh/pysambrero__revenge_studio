@@ -1,0 +1,38 @@
+<div class="modal fade" id="modalExportDescriptionsFileName" tabindex="-1" role="dialog"
+     aria-labelledby="modalExportDescriptionsFileNameLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="width: 450px;">
+        <div class="modal-content">
+
+            <form>
+                <div class="modal-body">
+
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control max-length" placeholder="file alias here..."
+                                   name="export_file_alias"
+                                   id="export_file_alias"
+                                   type="text"
+                                   maxlength="20"
+                                   required autocomplete="off" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <span id="export_file_name" style="color: #303da3;font-weight: bold; font-size: large;">descriptions.zip</span>
+                        </div>
+                    </fieldset>
+
+                </div>
+                <div class="modal-footer" style="padding: 5px;">
+                    <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                    </button>
+                    <button type="submit" class="btn btn-success push_right btn-sm"
+                            onclick="StoreListingModule.confirmExportDescriptions(event, document.getElementById('export_file_name').innerText);">
+                        Export
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

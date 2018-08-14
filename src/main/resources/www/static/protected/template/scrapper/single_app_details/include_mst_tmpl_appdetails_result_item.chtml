@@ -1,0 +1,97 @@
+<li class="list-group-item app-search-li" id="{{id}}" app-id="{{app_id}}">
+    <div class="panel panel-sexy app-search-panel">
+        <div class="panel-heading">
+            <div class="pull-right">
+                <div class="btn-group pull-right">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"
+                       aria-expanded="false">
+                        Actions&nbsp;<i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="#" onclick="ScrapperModule.getAppASO(event, '{{app_id}}', 'appBrain');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO - AppBrain</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="ScrapperModule.getAppASO(event, '{{app_id}}', 'searchman');"><i class="fa fa-rocket fa-fw"></i>&nbsp;ASO - Searchman</a>
+                        </li>
+                        <li><a href="#" onclick="ScrapperModule.addAppToFavorite(event, '{{app_id}}');"><span class="app-rating-star">&#9733;&nbsp;</span>Add to favorites</a>
+                        </li>
+                        <li><a href="#" onclick="ScrapperModule.checkAppCountries(event, '{{app_id}}');"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;Check countries</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#" onclick="ScrapperModule.downloadApk(event, '{{app_id}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download apk</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="ScrapperModule.openApkDownloadPage(event, '{{app_id}}');"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;Download from ApkPure</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" onclick="ScrapperModule.installOnDevice(event, '{{app_id}}')"><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;Launch on
+                                device
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#" onclick="ScrapperModule.deleteAppSearch(event, '{{app_id}}', '{{id}}');">
+                            <i class="fa fa-fw fa-trash-o" style="color: #ea0707;"></i>&nbsp;Delete from list</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id={{app_id}}"
+               target="_blank" class="app-search-title">{{template_bean.title}}</a>&nbsp;<span
+                class="app-rating-star">&#9733;&nbsp;</span><span class="app-search-rating">{{template_bean.score}}</span>&nbsp;<span
+                class="app-search-nb-review">{{template_bean.nbReviews}}</span>&nbsp;<span
+                class="reviewers-small"></span>
+        </div>
+        <div class="panel-body">
+            <div class="kw-icon-container">
+                <a href="https://play.google.com/store/apps/details?id={{app_id}}"
+                   target="_blank">
+                    <img alt="icon"
+                         src={{icon_src}}
+                         class="app-search-icon"/>
+                </a>
+            </div>
+            <div class="app-search-details">
+                <div><span class="app-search-property-name">developer</span>&nbsp;<a
+                        href="{{developer_link}}"
+                        target="_blank"><span
+                        class="app-search-property-value">{{template_bean.developer}}</span></a>
+                </div>
+
+                <div>
+                    <span class="app-search-property-name">category</span>&nbsp;<span
+                        class="app-search-property-value">{{template_bean.genreId}}</span>
+                </div>
+
+                <div>
+                    <span class="app-search-property-name">{$mst_if_start}isFree}}FREE{{/isFree}}{$mst_else_start}isFree}}PAID{{/isFree}}</span>&nbsp;<span
+                        class="app-search-property-value">{$mst_else_start}isFree}}Price:&nbsp;{{template_bean.price}}&nbsp;{{/isFree}}{$mst_if_start}template_bean.adSupported}}Contains ads&nbsp;{{/template_bean.adSupported}}{$mst_if_start}template_bean.offersIAP}}Offers In-app purchase{{/template_bean.offersIAP}}</span>
+                </div>
+
+                <div>
+                    <span class="app-search-property-name">Installs</span>&nbsp;<span
+                        class="app-search-property-value">{{template_bean.minInstalls}}&nbsp;-&nbsp;{{template_bean.maxInstalls}}</span>
+                </div>
+
+                <div>
+                    <span class="app-search-property-name">Version</span>&nbsp;<span
+                        class="app-search-property-value">{{template_bean.version}}</span>&nbsp;&nbsp;<span
+                        class="app-search-property-name">updated</span>&nbsp;<span
+                        class="app-search-property-value">{{template_bean.updated}}</span>
+                </div>
+            </div>
+
+            <div class="app-search-short-container">
+                <span class="app-search-property-name">Short description</span>&nbsp;&nbsp;<span
+                    class="app-search-property-value">{{{template_bean.shortDesc}}}</span>
+            </div>
+
+            <div class="app-search-details-btn">
+                <button class="btn btn-success btn-xs" title="delete"
+                        onclick="ScrapperModule.openDetailsAppSearch(this);">&nbsp;details
+                </button>
+            </div>
+        </div>
+    </div>
+</li>

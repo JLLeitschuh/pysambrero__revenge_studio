@@ -1,0 +1,27 @@
+<div class="modal fade" id="modal-appcountries-search-confirm-no-proxy" tabindex="-1" role="dialog"
+     aria-labelledby="modal-appcountries-search-confirm-no-proxy-label" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="width: 450px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <span>Confirm NO Proxy</span>
+            </div>
+            <div class="modal-body">
+                Do you want to continue&nbsp;<span style="color: red;"><strong>WITHOUT A PROXY?</strong></span><br>
+                Your IP address may be banned by the remote server!
+            </div>
+            <div class="modal-footer" style="padding: 5px;">
+                <button type="button" class="btn btn-danger push_right btn-sm"
+                        onclick="ScrapperModule.confirmAppCountriesWithoutProxy();">
+                    Continue without Proxy
+                </button>
+                <button type="button" class="btn btn-success push_right btn-sm" data-dismiss="modal"
+                        onclick="ScrapperModule.openProxySettings();">Proxy settings
+                </button>
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>

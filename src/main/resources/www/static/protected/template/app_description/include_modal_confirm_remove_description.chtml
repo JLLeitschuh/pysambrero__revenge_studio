@@ -1,0 +1,24 @@
+<div class="modal fade" id="modalConfirmRemoveDescription" tabindex="-1" role="dialog"
+     aria-labelledby="modalConfirmRemoveDescriptionLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="width: 450px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <span>Confirm remove</span>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="mcr_language_code" id="mcr_language_code" value=""/>
+                Do you want to remove&nbsp;<span style="color: red;" id="mcr_language_name">This</span>&nbsp;description?<br>
+            </div>
+            <div class="modal-footer" style="padding: 5px;">
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-danger push_right btn-sm"
+                        onclick="StoreListingModule.confirmRemoveDescription(document.getElementById('mcr_language_code').value);">Remove
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,43 @@
+<div class="col-xs-12">
+    <div>
+        <h4 class="">Preview apk contents without decompiling it, then benchmark it</h4>
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-5 col-sm-8 col-xs-12">
+                <div style="position: absolute;right: 20px;top: 5px;">
+                    <button class="btn btn-sunny btn-sm" id="submit-apk-benchmark" style="margin-top: 5px;"
+                            onclick="ApkToolModule.benchmarkApk();" title="Benchmark process will automatically change apk package name to a random one, then will build it, sign it with DEBUG keystore and finally zipalign it.&#10;At the end, you will be able to install the newly generated apk on your device to test if it runs as expected!">
+                        Benchmark
+                    </button>
+                    <div id="benchmark-working-div" style="display: none;">
+                        <div class="working-gif" id="benchmark-working-gif" style="display: inline-block;"></div>
+                        <button class="btn btn-hot btn-sm" id="cancel-apk-benchmark" data-process-id=""
+                                style="float: right; margin-top: 5px;"
+                                onclick="ApkToolModule.cancelBenchmarkApk();" title="Cancel process">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+                <!-- Upload apk dropzone -->
+                <form id="apkPreviewerDropzone" action="/fake_url" class="dropzone" method="post"
+                      enctype="multipart/form-data">
+                    <div class="dz-message">Drop apk file here or click here to select
+                    </div>
+                </form>
+                <!-- ./Upload apk dropzone -->
+            </div>
+
+            <!-- apk preview results -->
+            <div class="col-xs-12" id="apkreverse-apk-previewer-result-container">
+            </div>
+            <!-- ./apk preview results -->
+        </div>
+    </div>
+
+    <!-- apk ready notification list -->
+    <div id="apk-ready-container">
+        <ul id="apk-ready-list" class="list-unstyled">
+        </ul>
+    </div>
+    <!-- ./apk ready notification list -->
+</div>

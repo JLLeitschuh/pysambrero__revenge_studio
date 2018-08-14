@@ -1,0 +1,68 @@
+<div class="modal fade" id="modalAddFilesToProjectFolder" tabindex="-1" role="dialog"
+     aria-labelledby="modalAddFilesToProjectFolderLabel" data-backdrop="static" data-keyboard="false"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 60px;">
+        <div class="modal-content">
+            <div class="modal-header modal-header-dark">
+                <button class="close" data-dismiss="modal">&#10006;</button>
+                <div style="font-size: 18px;">
+                    <span>Add files to folder&nbsp;</span><span id="modalAddFilesToProjectFolder-folder-path" style="font-weight: bold; color: #ffc391;word-wrap: break-word;"></span>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <!-- Sub Modal, duplicate names copy strategy (override/rename)-->
+                <div class="modal submodal" id="add-new-files-duplicates-submodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" style="max-height: 335px;overflow: auto;">
+                                <p class="text-center">Some of the file names you submitted already exists!&nbsp;(<span id="add-new-files-duplicates-count"></span>)<br>
+                                    Please select the action to perform : override or rename ?
+                                </p>
+                                <hr/>
+                                <div>
+                                    <span id="add-new-files-duplicates-list" style="font-weight: bold;"></span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-default btn-sm" id="modalAddFilesToProjectFolder-submodal-override">Override</button>
+                                <button class="btn btn-default btn-sm" id="modalAddFilesToProjectFolder-submodal-rename">Rename</button>
+                                <button class="btn btn-danger btn-sm" data-dismiss="submodal" aria-hidden="true">Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sub Modal, duplicate names copy strategy (override/rename)-->
+
+                <div style="position: absolute;right: 25px;top: 10px;z-index: 1001;">
+                    <button class="btn btn-danger btn-xs" id="clear-add-files-dropzone" style="margin-top: 15px;margin-right: 15px;display: none;">
+                        Remove all
+                    </button>
+                </div>
+
+                <!-- multiple files upload form-->
+                <div>
+                    <form id="addFilesToProjectFolderDropzone" action="/fake_url" class="dropzone" method="post"
+                          enctype="multipart/form-data" style="text-align: center; min-height: 240px;max-height: 400px;overflow: auto;">
+                        <input type="hidden" id="modalAddFilesToProjectFolder-temp-folder-name" value=""/>
+                        <input type="hidden" id="modalAddFilesToProjectFolder-target-nodeId" value=""/>
+                        <div class="dz-message">Drop your files here or click here to select<br><br>
+						<span style="font-size: 15px;">(<strong>500</strong> files at most, file size less than <strong>500
+							Megabytes</strong>)</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- ./multiple files upload form-->
+            </div>
+
+            <div class="modal-footer" style="padding: 5px;">
+                <button id="modalAddFilesToProjectFolder-submit" type="button" class="btn btn-success push_right btn-sm" style="display: none;">
+                    Add files
+                </button>
+                <button type="button" class="btn btn-default push_right btn-sm" data-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

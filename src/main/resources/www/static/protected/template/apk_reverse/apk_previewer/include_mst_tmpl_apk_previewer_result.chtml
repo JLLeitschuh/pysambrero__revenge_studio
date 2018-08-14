@@ -1,0 +1,296 @@
+<div>
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.assets.length}} Files
+            </div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-search"></span>
+                    <input type="text" class="form-control filter-app-list"
+                           placeholder="filter..." style="margin-top: 1px; z-index: 0;" id="js-search-apk-prev-input"/>
+                    <span class="filter-counter" id="filter-counter-js-tree-apk-prev"></span>
+                </div>
+                <div id="jstree-tree-apk-prev" style="margin-top: 15px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                Apk information for&nbsp;&nbsp;<span style="color: #3a71b9;font-size: large;">{{apk_file_name}}</span>
+            </div>
+            <div class="panel-body" style="padding-left: 150px; word-wrap: break-word;">
+
+                {$mst_if_start}response.app_name}}
+                <div>
+                    <span class="styled-field-prop-name">app name</span><span
+                        class="styled-field-prop-value">{{response.app_name}}</span>
+                    <br/>
+                </div>
+                <br/>
+                {{/response.app_name}}
+
+                {$mst_if_start}response.size_in_MB}}
+                <div>
+                    <span class="styled-field-prop-name">apk size</span><span
+                        class="styled-field-prop-value">{{response.size_in_MB}}&nbsp;Mb</span>
+                    <br/>
+                </div>
+                <br/>
+                {{/response.size_in_MB}}
+
+
+                {$mst_if_start}response.package}}
+                <div>
+                    <span class="styled-field-prop-name">package</span><span class="styled-field-prop-value package-name-property">{{response.package}}</span>
+                    <br/>
+                </div>
+                <br/>
+                {{/response.package}}
+
+
+                <div>
+                    <span class="styled-field-prop-name">version</span>
+
+                    {$mst_if_start}response.versionCode}}
+                    <span class="styled-field-prop-name"></span><span
+                        class="styled-field-prop-value">versionCode&nbsp;"{{response.versionCode}}"</span>
+                    <br/>
+                    {{/response.versionCode}}
+
+                    {$mst_if_start}response.versionName}}
+                    <span class="styled-field-prop-name"></span><span
+                        class="styled-field-prop-value">versionName&nbsp;"{{response.versionName}}"</span>
+                    <br/>
+                    {{/response.versionName}}
+                </div>
+                <br/>
+
+                <div>
+                    <span class="styled-field-prop-name">sdk</span>
+
+                    {$mst_if_start}response.minSdkVersion}}
+                    <span class="styled-field-prop-name"></span><span class="styled-field-prop-value">minSdkVersion&nbsp;"{{response.minSdkVersion}}"</span>
+                    <br/>
+                    {{/response.minSdkVersion}}
+
+                    {$mst_if_start}response.targetSdkVersion}}
+                    <span class="styled-field-prop-name"></span><span class="styled-field-prop-value">targetSdkVersion&nbsp;"{{response.targetSdkVersion}}"</span>
+                    <br/>
+                    {{/response.targetSdkVersion}}
+
+                    {$mst_if_start}response.maxSdkVersion}}
+                    <span class="styled-field-prop-name"></span><span class="styled-field-prop-value">maxSdkVersion&nbsp;"{{response.maxSdkVersion}}"</span>
+                    <br/>
+                    {{/response.maxSdkVersion}}
+                </div>
+                <br/>
+
+
+                {$mst_if_start}response.signatureInfo}}
+                <div>
+                    <span class="styled-field-prop-name">Signature</span><span class="styled-field-prop-value">{{{response.signatureInfo}}}</span>
+                    <br/>
+                </div>
+                <br/>
+                {{/response.signatureInfo}}
+                {$mst_else_start}response.signatureInfo}}
+                <div>
+                    <span class="styled-field-prop-name">Signature</span><span class="styled-field-prop-value">No signature...</span>
+                    <br/>
+                </div>
+                <br/>
+                {{/response.signatureInfo}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{$mst_if_start}response.adNetworks.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.adNetworks.length}} Ad Network(s)
+            </div>
+            <div class="panel-body">
+                <ul class="app-adnetworks-list">
+                    {$mst_if_start}response.adNetworks}}
+                    <li>
+                        <a href="{{adn_site}}" target="_blank" title="{{adn_name}}"><img src="{{adn_image_src}}" width="180"></a>
+                    </li>
+                    {{/response.adNetworks}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.adNetworks.0}}
+
+
+{$mst_if_start}response.appIcons.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.appIcons.length}} App icons
+            </div>
+            <div class="panel-body">
+                <div><span style="color: #a8a8a8;">You can obtain more info about any app-icon by hovering the mouse cursor over it!</span></div>
+                <div>
+                    {$mst_if_start}response.appIcons}}
+                    <img class="project-info-app-icon-img" src="data:image/png;base64,{{bytes}}" title="{{title}}"/>
+                    {{/response.appIcons}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.appIcons.0}}
+
+{$mst_if_start}response.permissions.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.permissions.length}} Permissions
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.permissions}}
+                    <li>{$mst_dot}</li>
+                    {{/response.permissions}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.permissions.0}}
+
+
+{$mst_if_start}response.packageActivities.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.packageActivities.length}} Activities
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.packageActivities}}
+                    <li>{$mst_dot}</li>
+                    {{/response.packageActivities}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.packageActivities.0}}
+
+
+{$mst_if_start}response.packageServices.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.packageServices.length}} Services
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.packageServices}}
+                    <li>{$mst_dot}</li>
+                    {{/response.packageServices}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.packageServices.0}}
+
+
+{$mst_if_start}response.packageReceivers.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-sexy">
+            <div class="panel-heading">
+                {{response.packageReceivers.length}} Receivers
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.packageReceivers}}
+                    <li>{$mst_dot}</li>
+                    {{/response.packageReceivers}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.packageReceivers.0}}
+
+{$mst_if_start}response.foreignActivities.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-hot">
+            <div class="panel-heading">
+                {{response.foreignActivities.length}} Other Activities
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.foreignActivities}}
+                    <li>{$mst_dot}</li>
+                    {{/response.foreignActivities}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.foreignActivities.0}}
+
+
+{$mst_if_start}response.foreignServices.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-hot">
+            <div class="panel-heading">
+                {{response.foreignServices.length}} Other Services
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.foreignServices}}
+                    <li>{$mst_dot}</li>
+                    {{/response.foreignServices}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.foreignServices.0}}
+
+
+{$mst_if_start}response.foreignReceivers.0}}
+<div class="row">
+    <div class="col-md-10 col-lg-8">
+        <div class="panel panel-hot">
+            <div class="panel-heading">
+                {{response.foreignReceivers.length}} Other Receivers
+            </div>
+            <div class="panel-body">
+                <ul class="apk-content-list">
+                    {$mst_if_start}response.foreignReceivers}}
+                    <li>{$mst_dot}</li>
+                    {{/response.foreignReceivers}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/response.foreignReceivers.0}}
+</div>

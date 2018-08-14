@@ -1,0 +1,101 @@
+<div>
+    <style>
+
+        #character-container {
+            white-space: pre-wrap;
+        }
+
+        span.danger {
+            background: #ffbd00;
+            border-radius: 4px;
+            border: 1px solid #000;
+            color: #000;
+        }
+
+        span.danger:hover {
+            padding: 3px;
+            font-size: 15px;
+            z-index: 10;
+        }
+
+        .density-list {
+            max-height: 200px;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .density-list li:hover {
+            background: #c8fdff;
+        }
+    </style>
+    <div class="container-fluid">
+        <script>
+            RevEnge.chkcks();
+        </script>
+        <!-- App Page Content -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Keyword Tools</h3>
+            </div>
+        </div>
+
+
+        <div class="row" id="rtlo-translation-tabs">
+            <div class="col-lg-12 top-bluesky">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#keyword-density-data" data-toggle="tab">Density</a>
+                    </li>
+
+                    <li>
+                        <a href="#keyword-unicode-detector-data" data-toggle="tab">Unicode detector</a>
+                    </li>
+
+                    <li>
+                        <a href="#keyword-trends-data" data-toggle="tab">Google trends</a>
+                    </li>
+
+                    <li>
+                        <a href="#keyword-suggestions-data" data-toggle="tab">Suggestions</a>
+                    </li>
+
+                    <li>
+                        <a href="#keyword-planner-data" data-toggle="tab">Keyword Planner</a>
+                    </li>
+                </ul>
+
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <br>
+
+                    <div class="row tab-pane fade in active" id="keyword-density-data">
+                        {% include include_tab_density %}
+                    </div>
+
+                    <div class="row tab-pane fade in" id="keyword-unicode-detector-data">
+                        {% include include_tab_unicode_detector %}
+                    </div>
+
+                    <div class="row tab-pane fade in" id="keyword-trends-data">
+                        {% include include_tab_google_trends %}
+                    </div>
+
+                    <div class="row tab-pane fade in" id="keyword-suggestions-data">
+                        <div class="col-xs-12">
+                            <img src="static/public/images/util/under_construction.png">
+                        </div>
+                    </div>
+
+                    <div class="row tab-pane fade in" id="keyword-planner-data">
+                        <div class="col-xs-12">
+                            <img src="static/public/images/util/under_construction.png">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

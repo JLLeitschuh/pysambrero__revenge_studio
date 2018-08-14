@@ -1,0 +1,5 @@
+<li data-node-id="{{node_id}}" data-is-sync="true" style="height: 100%;">
+    <div class="CodeMirror cm-editor">
+        <textarea class="editor" id="editor-{{node_id}}"></textarea>
+    </div>
+</li>

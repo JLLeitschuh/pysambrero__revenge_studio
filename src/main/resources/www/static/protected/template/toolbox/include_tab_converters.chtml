@@ -1,0 +1,37 @@
+<div class="col-xs-12">
+    <ul class="list-inline inner-nav">
+        <li class="active">
+            <a href="#decimal-to-hex-data" data-toggle="tab">Decimal to Hex
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes for converters tools-->
+    <div class="tab-content">
+        <br/>
+        <!-- Decimal to hex-->
+        <div class="row tab-pane fade in active" id="decimal-to-hex-data">
+            <div class="col-md-6">
+                <fieldset>
+
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            <label for="decimal_input_content">Decimal Value :</label>
+                            <textarea class="form-control" rows="2" id="decimal_input_content"
+                                      style="resize:none;" onkeyup="ToolboxModule.convertDecToHex();"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hex_output_content">Hexadecimal Value :</label>
+                            <textarea class="form-control" rows="2" id="hex_output_content"
+                                      style="resize:none;" readonly="readonly"></textarea>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <!-- ./Decimal to hex-->
+    </div>
+</div>

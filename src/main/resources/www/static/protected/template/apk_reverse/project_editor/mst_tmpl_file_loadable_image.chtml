@@ -1,0 +1,10 @@
+<li data-node-id="{{node_id}}" style="height: 100%;">
+    <div class="loadable-img-container1">
+        <div class="loadable-img-container2">
+            <div class="file-info-badge">
+                {{file_info}}
+            </div>
+            <img src="{{url_src}}" alt="Loading..." class="pannable-image">
+        </div>
+    </div>
+</li>
