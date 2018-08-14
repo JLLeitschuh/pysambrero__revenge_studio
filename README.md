@@ -28,3 +28,5 @@ and go to "target" folder and you will find an executable jar called "Android-Re
 Or you can download the demo jar [here](http://www.mediafire.com/file/3i804dgusa5hph4/Android-RevEnge.jar/file)<br/>
 
 Once launched, Revenge studio wil open the login page in your default browser, then you can login with username "admin" and password "admin".<br/>
+
+This project was test on windows 7,8 10, it may not work on linux based operating systems. I will try to fix this issue, if I have time.
