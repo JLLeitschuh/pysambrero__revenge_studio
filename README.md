@@ -16,5 +16,7 @@ Features:
 - file explorer
 - any package renamer
 - text search and replace
+- keystore manager (create, import existing keystores...)
+- adb installer
 
 and so many other features...
